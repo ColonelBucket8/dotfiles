@@ -1,0 +1,14 @@
+nvidia-settings -a GPUFanControlState=1 -a GPUTargetFanSpeed=80 
+export GTK_IM_MODULE=fcitx5
+export QT_IM_MODULE=fcitx5
+export XMODIFIERS=@im=fcitx5
+
+export QT_QPA_PLATFORMTHEME="qt5ct"
+
+export QT_PLATFORMTHEME="qt5ct"
+
+export QT_PLATFORM_PLUGIN="qt5ct"
+
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+
+export QT_SCALE_FACTOR=1
