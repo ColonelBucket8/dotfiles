@@ -8,6 +8,8 @@ local awful = require("awful")
 require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
+local vicious = require("vicious")
+widgets = require("widgets")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
@@ -202,6 +204,29 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
+    -- Vicious widgets
+    -- Memory Widget
+    memwidget = wibox.widget.textbox()
+    vicious.cache(vicious.widgets.mem)
+
+    -- Disk Space
+    diskwidget = wibox.widget.textbox()
+    vicious.cache(vicious.widgets.fs)
+
+    -- CPU Widget Graph
+    cpuwidget = awful.widget.graph()
+    cpuwidget:set_width(50)
+    cpuwidget:set_background_color"#494B4F"
+    cpuwidget:set_color{ type = "linear", from = { 0, 0 }, to = { 50, 0 },
+                         stops = { { 0, "#FF5656" },
+			                                { 0.5, "#88A175" },
+							                               { 1, "#AECF96" } } 
+			}
+
+    -- CPU Widget
+    cpuwidgetText = wibox.widget.textbox()
+    vicious.cache(vicious.widgets.fs)
+
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
@@ -213,7 +238,10 @@ awful.screen.connect_for_each_screen(function(s)
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
+            layout = wibox.layout.fixed.horizontal, 
+	    vicious.register(diskwidget, vicious.widgets.fs, "ROOT ${/ avail_gb} GiB ", 2),
+	    vicious.register(cpuwidgetText, vicious.widgets.cpu, "CPU $1% ", 2),
+            vicious.register(memwidget, vicious.widgets.mem, "MEM $2MiB|$3MiB ", 2),
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
@@ -262,9 +290,9 @@ globalkeys = gears.table.join(
               {description = "swap with next client by index", group = "client"}),
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
               {description = "swap with previous client by index", group = "client"}),
-    awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
+    awful.key({ modkey, 	 }, ".", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
-    awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
+    awful.key({ modkey,		  }, ",", function () awful.screen.focus_relative(-1) end,
               {description = "focus the previous screen", group = "screen"}),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
@@ -341,13 +369,13 @@ clientkeys = gears.table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
+    awful.key({ modkey,   	 }, "c",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
-    awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
+    awful.key({ modkey, "Shift"   }, ".",      function (c) c:move_to_screen()               end,
               {description = "move to screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
