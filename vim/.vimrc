@@ -4,6 +4,7 @@ so ~/.vim/coc.vim
 " :CocInstall coc-tsserver coc-json coc-html coc-css
 
 set tabstop=4
+set shiftwidth=2
 
 inoremap " ""<left>
 inoremap ' ''<left>
