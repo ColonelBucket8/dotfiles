@@ -5,6 +5,8 @@ so ~/.vim/coc.vim
 
 set tabstop=4
 set shiftwidth=2
+set nu
+set noshowmode
 
 inoremap " ""<left>
 inoremap ' ''<left>
