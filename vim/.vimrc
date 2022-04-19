@@ -3,6 +3,7 @@ so ~/.vim/coc.vim
 " Install extensions for web-development
 " :CocInstall coc-tsserver coc-json coc-html coc-css
 
+set expandtab
 set tabstop=4
 set shiftwidth=2
 set nu
