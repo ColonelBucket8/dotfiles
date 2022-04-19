@@ -10,6 +10,7 @@ set shiftwidth=2
 set nu
 set noshowmode
 set laststatus=2
+set incsearch
 
 " ESC key
 inoremap kj <Esc>
