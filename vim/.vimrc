@@ -9,6 +9,8 @@ set nu
 set noshowmode
 set laststatus=2
 
+" ESC key
+inoremap kj <Esc>
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
