@@ -14,6 +14,7 @@ set laststatus=2
 inoremap kj <Esc>
 inoremap " ""<left>
 inoremap ' ''<left>
+inoremap ` ``<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
