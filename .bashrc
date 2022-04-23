@@ -5,10 +5,16 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Set vim as default text editor
+export VISUAL=vim
+export EDITOR="%VISUAL"
+
 # Aliases
 alias ls='ls --color=auto'
+alias ll='ls -la --color=auto'
 alias grep='grep --color=auto'
 alias music='ncmpcpp'
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
 # PS1='[\u@\h \W]\$ '
 
