@@ -10,7 +10,7 @@ colorscheme onedark
 set expandtab
 set tabstop=4
 set softtabstop=4
-set shiftwidth=2
+set shiftwidth=4
 set nu
 set noshowmode
 set laststatus=2
