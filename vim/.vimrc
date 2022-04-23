@@ -6,6 +6,7 @@ so ~/.vim/coc.vim
 " Color Scheme
 syntax on
 colorscheme onedark
+highlight LineNr ctermfg=yellow
 
 set expandtab
 set tabstop=4
