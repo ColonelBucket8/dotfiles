@@ -3,6 +3,10 @@ so ~/.vim/coc.vim
 " Install extensions for web-development
 " :CocInstall coc-tsserver coc-json coc-html coc-css
 
+" Color Scheme
+syntax on
+colorscheme onedark
+
 set expandtab
 set tabstop=4
 set softtabstop=4
