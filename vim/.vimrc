@@ -17,6 +17,13 @@ set noshowmode
 set laststatus=2
 set incsearch
 
+" Change cursor to line when in insert mode
+" Block cursor by default 
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
+
 " ESC key
 inoremap kj <Esc>
 inoremap " ""<left>
