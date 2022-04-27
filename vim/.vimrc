@@ -1,11 +1,12 @@
 so ~/.vim/plugins.vim
 so ~/.vim/coc.vim
 " Install extensions for web-development
-" :CocInstall coc-tsserver coc-json coc-html coc-css coc-prettier
+" :CocInstall coc-tsserver coc-json coc-html coc-css coc-prettier coc-eslint
 
 " Color Scheme
 syntax on
-colorscheme onedark
+set background=dark
+colorscheme nord
 highlight LineNr ctermfg=blue
 
 set expandtab
