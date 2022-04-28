@@ -1,13 +1,14 @@
 so ~/.vim/plugins.vim
 so ~/.vim/coc.vim
 " Install extensions for web-development
-" :CocInstall coc-tsserver coc-json coc-html coc-css coc-prettier coc-eslint
+" :CocInstall coc-tsserver coc-json coc-html coc-css coc-prettier
 
 " Color Scheme
-syntax on
+syntax enable
 set background=dark
-colorscheme nord
-highlight LineNr ctermfg=blue
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
+"highlight LineNr ctermfg=blue
 
 set expandtab
 set tabstop=4
