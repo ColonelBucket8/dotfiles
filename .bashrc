@@ -32,6 +32,6 @@ cyn='\[\033[01;36m\]'   # Cyan
 wht='\[\033[01;37m\]'   # White
 clr='\[\033[00m\]'      # Reset
 
-export PS1="${cyn}\u${grn}@${cyn}\h ${grn}\w${ylw}\$(parse_git_branch)${clr} $ "
+export PS1="${red}\u${grn}@${red}\h ${grn}\w${ylw}\$(parse_git_branch)${clr} $ "
 
 #export PS1="${cyn}\u${grn}@${cyn}\h ${grn}\w\[\033[33m\]\$(parse_git_branch)${clr} $ "
