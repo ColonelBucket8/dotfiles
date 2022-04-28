@@ -3,7 +3,7 @@ call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-surround'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
