@@ -42,5 +42,5 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
-
+nnoremap <C-f> :NERDTreeToggle<CR>
 
