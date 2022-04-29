@@ -1,5 +1,9 @@
 so ~/.vim/plugins.vim
 so ~/.vim/coc.vim
+
+" Coc path for windows
+let g:coc_data_home = 'C:\\Users\\freed\\.config\\coc'
+
 " Install extensions for web-development
 " :CocInstall coc-tsserver coc-json coc-html coc-css coc-prettier
 " Install bat and ripgrep for full fzf features
