@@ -8,6 +8,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'pangloss/vim-javascript'
+
+" Color Schemes
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
