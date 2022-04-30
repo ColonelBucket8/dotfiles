@@ -9,6 +9,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
 
 " Color Schemes
 Plug 'joshdick/onedark.vim'
