@@ -13,6 +13,7 @@ set background=dark
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 "highlight LineNr ctermfg=blue
+"hi Normal guibg=NONE ctermbg=NONE
 
 set expandtab
 set tabstop=4
