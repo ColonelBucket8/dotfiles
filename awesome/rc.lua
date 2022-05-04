@@ -9,7 +9,7 @@ require("awful.autofocus")
 -- Widget and layout library
 local wibox = require("wibox")
 local vicious = require("vicious")
-widgets = require("widgets")
+local widgets = require("widgets")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
@@ -204,29 +204,6 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
 
-    -- Vicious widgets
-    -- Memory Widget
-    memwidget = wibox.widget.textbox()
-    vicious.cache(vicious.widgets.mem)
-
-    -- Disk Space
-    diskwidget = wibox.widget.textbox()
-    vicious.cache(vicious.widgets.fs)
-
-    -- CPU Widget Graph
-    cpuwidget = awful.widget.graph()
-    cpuwidget:set_width(50)
-    cpuwidget:set_background_color"#494B4F"
-    cpuwidget:set_color{ type = "linear", from = { 0, 0 }, to = { 50, 0 },
-                         stops = { { 0, "#FF5656" },
-			                                { 0.5, "#88A175" },
-							                               { 1, "#AECF96" } } 
-			}
-
-    -- CPU Widget
-    cpuwidgetText = wibox.widget.textbox()
-    vicious.cache(vicious.widgets.fs)
-
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
@@ -238,9 +215,9 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal, 
-	    vicious.register(diskwidget, vicious.widgets.fs, "ROOT ${/ avail_gb} GiB ", 2),
-	    vicious.register(cpuwidgetText, vicious.widgets.cpu, "CPU $1% ", 2),
-            vicious.register(memwidget, vicious.widgets.mem, "MEM $2MiB|$3MiB ", 2),
+            widgets.disk(),
+            widgets.cpu(),
+            widgets.mem(),
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
