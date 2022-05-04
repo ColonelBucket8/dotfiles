@@ -23,6 +23,7 @@ set noshowmode
 set laststatus=2
 set incsearch
 set hlsearch
+set autoread
 
 " Change cursor to line when in insert mode
 " Block cursor by default 
