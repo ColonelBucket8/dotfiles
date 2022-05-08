@@ -9,6 +9,10 @@
 export VISUAL=vim
 export EDITOR="%VISUAL"
 
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+fi
+
 # Aliases
 alias ls='ls --color=auto'
 alias ll='ls -la --color=auto'
