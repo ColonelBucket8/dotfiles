@@ -26,6 +26,8 @@ set incsearch
 set hlsearch
 set autoread
 set hidden
+set wildmenu
+set wildignorecase
 
 " Change cursor to line when in insert mode
 " Block cursor by default 
