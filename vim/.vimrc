@@ -28,6 +28,7 @@ set autoread
 set hidden
 set wildmenu
 set wildignorecase
+set relativenumber
 
 " Change cursor to line when in insert mode
 " Block cursor by default 
