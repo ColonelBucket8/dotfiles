@@ -15,6 +15,7 @@ colorscheme gruvbox
 "highlight LineNr ctermfg=blue
 "hi Normal guibg=NONE ctermbg=NONE
 
+set nocompatible
 set expandtab
 set tabstop=4
 set softtabstop=4
