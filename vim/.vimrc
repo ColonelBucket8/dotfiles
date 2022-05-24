@@ -49,6 +49,6 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
-nnoremap <C-a> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+nnoremap <C-a> :NERDTreeToggle<CR>
 nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <Leader>f :Rg<CR>
