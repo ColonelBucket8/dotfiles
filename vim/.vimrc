@@ -7,12 +7,14 @@ let g:coc_data_home = 'C:\\Users\\freed\\.config\\coc'
 " Install extensions for web-development
 " :CocInstall coc-tsserver coc-json coc-html coc-css coc-prettier
 " Install bat and ripgrep for full fzf features
+"
 " Color Scheme
 syntax enable
 set background=dark
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
-"highlight LineNr ctermfg=blue
+let g:rehash256 = 1
+"let g:gruvbox_contrast_dark='hard'
+colorscheme molokai
+highlight LineNr ctermfg=yellow
 "hi Normal guibg=NONE ctermbg=NONE
 
 set nocompatible
