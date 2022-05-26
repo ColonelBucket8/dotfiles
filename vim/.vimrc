@@ -10,8 +10,9 @@ let g:coc_data_home = 'C:\\Users\\freed\\.config\\coc'
 " Color Scheme
 syntax enable
 set background=dark
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+"let g:gruvbox_contrast_dark='hard'
+let g:rehash256 = 1
+colorscheme molokai
 "highlight LineNr ctermfg=blue
 "hi Normal guibg=NONE ctermbg=NONE
 
