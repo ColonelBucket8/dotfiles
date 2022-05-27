@@ -1,0 +1,52 @@
+{
+  "workbench.iconTheme": "material-icon-theme",
+  "html.format.templating": true,
+  "editor.formatOnSave": true,
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "explorer.compactFolders": false,
+  "workbench.colorTheme": "Dark (Molokai)",
+  "workbench.preferredHighContrastColorTheme": "Default Light+",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "bracketPairColorizer.depreciation-notice": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "window.zoomLevel": 2,
+  "git.confirmSync": false,
+  // neovim
+  // "vscode-neovim.neovimExecutablePaths.win32": "C:\\tools\\neoVim\\Neovim\\bin\\nvim.exe"
+  // "vscode-neovim.neovimExecutablePaths.win32": "C:\\Users\\aimiikhwanfadhilmoh\\scoop\\apps\\neovim\\current\\bin\\nvim.exe"
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["k", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+
+  // Vim Status Bar
+  // "vim.statusBarColorControl": true,
+  // "vim.statusBarColors.normal": ["#8FBCBB", "#000"],
+  // "vim.statusBarColors.insert": ["#BF616A", "#000"],
+  // "vim.statusBarColors.visual": ["#B48EAD", "#000"],
+  // "vim.statusBarColors.visualline": ["#B48EAD", "#000"],
+  // "vim.statusBarColors.visualblock": ["#A3BE8C", "#000"],
+  // "vim.statusBarColors.replace": "#D08770",
+  // "vim.statusBarColors.commandlineinprogress": "#007ACC",
+  // "vim.statusBarColors.searchinprogressmode": "#007ACC",
+  // "vim.statusBarColors.easymotionmode": "#007ACC",
+  // "vim.statusBarColors.easymotioninputmode": "#007ACC",
+  // "vim.statusBarColors.surroundinputmode": "#007ACC",
+
+  "workbench.colorCustomizations": {
+    "editorLineNumber.foreground": "#fdbc38"
+    // "statusBar.background": "#B48EAD",
+    // "statusBar.noFolderBackground": "#B48EAD",
+    // "statusBar.debuggingBackground": "#B48EAD",
+    // "statusBar.foreground": "#000",
+    // "statusBar.debuggingForeground": "#000"
+  },
+  "workbench.editor.showTabs": false,
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "relative"
+}
