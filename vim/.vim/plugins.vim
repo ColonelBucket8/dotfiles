@@ -10,6 +10,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Color Schemes
 Plug 'joshdick/onedark.vim'

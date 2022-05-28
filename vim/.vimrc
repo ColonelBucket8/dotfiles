@@ -1,5 +1,6 @@
 so ~/.vim/plugins.vim
 so ~/.vim/coc.vim
+so ~/.vim/ctrlp.vim
 
 " Coc path for windows
 let g:coc_data_home = 'C:\\Users\\freed\\.config\\coc'
