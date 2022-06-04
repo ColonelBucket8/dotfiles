@@ -57,3 +57,4 @@ nnoremap <silent> <C-f> :NERDTreeFind<CR>
 nnoremap <silent> <C-p> :Files<CR>
 nnoremap <silent> <Leader>f :Rg<CR>
 nnoremap <silent> <Leader>p :Prettier<CR>
+nnoremap <Leader>s :update<CR>
