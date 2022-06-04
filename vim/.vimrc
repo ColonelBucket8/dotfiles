@@ -55,3 +55,4 @@ inoremap {;<CR> {<CR>};<ESC>O
 nnoremap <C-a> :NERDTreeToggle<CR>
 nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <Leader>f :Rg<CR>
+nnoremap <silent> <Leader>p :Prettier<CR>
