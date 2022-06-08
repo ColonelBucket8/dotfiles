@@ -8,7 +8,10 @@ let g:coc_data_home = 'C:\\Users\\freed\\.config\\coc'
 " Install extensions for web-development
 " :CocInstall coc-tsserver coc-json coc-html coc-css coc-prettier
 " Install bat and ripgrep for full fzf features
-"
+
+" Map leader key to space
+let mapleader = " "
+
 " Color Scheme
 syntax enable
 set background=dark
