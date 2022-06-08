@@ -9,7 +9,7 @@
   "liveServer.settings.donotShowInfoMsg": true,
   "bracketPairColorizer.depreciation-notice": false,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "window.zoomLevel": 2,
+  "window.zoomLevel": 1,
   "git.confirmSync": false,
   // neovim
   // "vscode-neovim.neovimExecutablePaths.win32": "C:\\tools\\neoVim\\Neovim\\bin\\nvim.exe"
@@ -17,10 +17,17 @@
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
+  "vim.leader": "<space>",
   "vim.insertModeKeyBindings": [
     {
       "before": ["k", "j"],
       "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["leader", "s"],
+      "commands": ["workbench.action.files.save"]
     }
   ],
 
