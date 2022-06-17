@@ -22,6 +22,8 @@ highlight LineNr ctermfg=yellow
 "hi Normal guibg=NONE ctermbg=NONE
 
 set nocompatible
+set timeoutlen=1000
+set ttimeoutlen=0
 set expandtab
 set tabstop=4
 set softtabstop=4
