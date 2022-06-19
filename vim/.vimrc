@@ -20,7 +20,9 @@ let g:rehash256 = 1
 colorscheme molokai
 highlight LineNr ctermfg=yellow
 "hi Normal guibg=NONE ctermbg=NONE
+highlight Normal ctermbg=black
 
+filetype plugin on
 set nocompatible
 set timeoutlen=1000
 set ttimeoutlen=0

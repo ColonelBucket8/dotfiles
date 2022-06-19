@@ -12,6 +12,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vimwiki/vimwiki'
 
 " Color Schemes
 Plug 'joshdick/onedark.vim'
