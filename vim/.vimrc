@@ -20,7 +20,8 @@ syntax enable
 set background=dark
 let g:rehash256 = 1
 "let g:gruvbox_contrast_dark='hard'
-colorscheme molokai
+let g:solarized_termcolors=256
+colorscheme solarized
 highlight LineNr ctermfg=yellow
 "hi Normal guibg=NONE ctermbg=NONE
 highlight Normal ctermbg=black
