@@ -18,9 +18,12 @@ let mapleader = " "
 " Color Scheme
 syntax enable
 set background=dark
+set termguicolors
 let g:rehash256 = 1
 "let g:gruvbox_contrast_dark='hard'
-let g:solarized_termcolors=256
+"let g:solarized_termcolors=256
+let ayucolor="dark"
+colorscheme ayu
 colorscheme solarized
 highlight LineNr ctermfg=yellow
 "hi Normal guibg=NONE ctermbg=NONE

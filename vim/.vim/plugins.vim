@@ -22,6 +22,7 @@ Plug 'morhetz/gruvbox'
 Plug 'altercation/vim-colors-solarized'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tomasr/molokai'
+Plug 'ayu-theme/ayu-vim'
 
 call plug#end()
 
