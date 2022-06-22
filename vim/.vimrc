@@ -24,7 +24,6 @@ let g:rehash256 = 1
 "let g:solarized_termcolors=256
 let ayucolor="dark"
 colorscheme ayu
-colorscheme solarized
 highlight LineNr ctermfg=yellow
 "hi Normal guibg=NONE ctermbg=NONE
 highlight Normal ctermbg=black
