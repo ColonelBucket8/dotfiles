@@ -16,6 +16,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'vimwiki/vimwiki'
 Plug 'mileszs/ack.vim'
+Plug 'sheerun/vim-polyglot'
 
 " Color Schemes
 Plug 'joshdick/onedark.vim'
