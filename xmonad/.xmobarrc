@@ -1,5 +1,5 @@
 Config { overrideRedirect = False
-       , font     = "xft:iosevka-9"
+       , font     = "xft:Open Sans:size=9, Noto Sans JP:size=9"
     --    , bgColor  = "#5f5f5f"
        , bgColor  = "#000000"
        , fgColor  = "#f8f8f2"
