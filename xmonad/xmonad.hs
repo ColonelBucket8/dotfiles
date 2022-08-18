@@ -64,6 +64,7 @@ myKeys =
  , ((myModMask, xK_Return), spawn "alacritty")
  , ((myModMask, xK_p), spawn "rofi -show drun -show-icons")
 --  , ((myModMask .|. shiftMask, xK_Return), spawn "steam")
+ , ((myModMask, xK_BackSpace), spawn "i3lock -c 000000")
  ]
 
 -- Cursor follows focus window
@@ -77,4 +78,6 @@ myStartupHook = do
     spawn "nm-applet"
     spawn "xrandr --output DVI-D-0 --mode 1920x1080 --rate 120.00 --auto --left-of HDMI-0 --output HDMI-0"
     spawn "xautolock -detectsleep -time 10 -locker 'i3lock -c 000000'"
+    -- Lockscreen with background image, png only
+    -- spawn "xautolock -detectsleep -time 10 -locker 'i3lock -i ~/Pictures/Wallpapers/jabami-yumeko.png"
     spawn "xmobar -x 1 ~/.xmobarrc"
