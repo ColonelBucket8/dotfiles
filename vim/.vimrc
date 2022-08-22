@@ -22,8 +22,9 @@ set termguicolors
 let g:rehash256 = 1
 "let g:gruvbox_contrast_dark='hard'
 "let g:solarized_termcolors=256
-let ayucolor="dark"
-colorscheme ayu
+" let ayucolor="dark"
+let g:airline_theme='palenight'
+colorscheme palenight
 highlight LineNr ctermfg=yellow
 "hi Normal guibg=NONE ctermbg=NONE
 highlight Normal ctermbg=black
