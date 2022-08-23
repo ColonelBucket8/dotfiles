@@ -19,6 +19,9 @@ let mapleader = " "
 syntax enable
 set background=dark
 set termguicolors
+" Make termguicolors works, eliminate black and white"
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 let g:rehash256 = 1
 "let g:gruvbox_contrast_dark='hard'
 "let g:solarized_termcolors=256
