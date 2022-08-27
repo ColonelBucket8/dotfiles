@@ -47,7 +47,7 @@ myBorderWidth = 2
 myModMask = mod4Mask
 
 -- Add gaps
-myLayout = mySmartSpacing $ layoutTall ||| layoutFull
+myLayout = mySmartSpacing $ layoutTall ||| (noBorders layoutFull)
     where
         myGap = spacingRaw False (Border 10 0 10 0) True (Border 0 10 0 10) True
         mySmartSpacing = smartSpacing 5
@@ -72,12 +72,14 @@ myLogHook = updatePointer (0.5, 0.5) (0, 0)
 
 -- Autostart programs
 myStartupHook = do
-    spawn "feh --bg-scale ~/Pictures/Wallpapers/fate-saber-2.jpg"
-    spawn "picom"
+    spawn "feh --bg-scale ~/Pictures/Wallpapers/anime-4.jpg"
+    spawn "picom --experimental-backends"
     spawn "fcitx5"
     spawn "nm-applet"
-    spawn "xrandr --output DVI-D-0 --mode 1920x1080 --rate 120.00 --auto --left-of HDMI-0 --output HDMI-0"
+    -- spawn "xrandr --output DVI-D-0 --mode 1920x1080 --rate 120.00 --auto --left-of HDMI-0 --output HDMI-0"
     spawn "xautolock -detectsleep -time 10 -locker 'i3lock -c 000000'"
     -- Lockscreen with background image, png only
     -- spawn "xautolock -detectsleep -time 10 -locker 'i3lock -i ~/Pictures/Wallpapers/jabami-yumeko.png"
     spawn "xmobar -x 1 ~/.xmobarrc"
+    -- System tray
+    -- spawn "stalonetray"
