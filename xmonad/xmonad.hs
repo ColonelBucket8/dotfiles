@@ -1,4 +1,5 @@
 import XMonad
+import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.StatusBar
 import XMonad.Hooks.StatusBar.PP
@@ -32,6 +33,7 @@ myConfig = def
     , focusFollowsMouse = myFocusFollowsMouse
     , startupHook = myStartupHook
     , logHook     = myLogHook
+    , manageHook  = myManageHook
     } `removeKeys` myRemoveKeys `additionalKeys` myKeys
 
 myTerminal :: String
@@ -47,7 +49,7 @@ myBorderWidth = 2
 myModMask = mod4Mask
 
 -- Add gaps
-myLayout = mySmartSpacing $ layoutTall ||| (noBorders layoutFull)
+myLayout = avoidStruts $ mySmartSpacing $ layoutTall ||| (noBorders layoutFull)
     where
         myGap = spacingRaw False (Border 10 0 10 0) True (Border 0 10 0 10) True
         mySmartSpacing = smartSpacing 5
@@ -60,15 +62,17 @@ myRemoveKeys =
 
 -- Custom keybinding
 myKeys =
- [ ((myModMask, xK_f), spawn "firefox")
- , ((myModMask, xK_Return), spawn "alacritty")
+ [ ((myModMask, xK_Return), spawn "alacritty")
  , ((myModMask, xK_p), spawn "rofi -show drun -show-icons")
 --  , ((myModMask .|. shiftMask, xK_Return), spawn "steam")
  , ((myModMask, xK_BackSpace), spawn "i3lock -c 000000")
+ , ((myModMask, xK_f), sendMessage ToggleStruts)
  ]
 
 -- Cursor follows focus window
 myLogHook = updatePointer (0.5, 0.5) (0, 0)
+
+myManageHook = manageHook def <+> manageDocks
 
 -- Autostart programs
 myStartupHook = do
