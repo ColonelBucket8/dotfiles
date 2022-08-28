@@ -1,6 +1,3 @@
-set runtimepath^=~/.vim runtimepath+=~/.vim/after
-let &packpath = &runtimepath
-        
 so ~/.config/nvim/plugins.vim
 so ~/.config/nvim/coc.vim
 " Install extensions for web-development
@@ -9,6 +6,10 @@ so ~/.config/nvim/coc.vim
 
 " Map leader key to space
 let mapleader = " "
+
+" Airline
+" Show buffer tab
+" let g:airline#extensions#tabline#enabled=1
 
 " Change vimiki to markdown
 let g:vimwiki_list = [{'path': '~/vimwiki/',
