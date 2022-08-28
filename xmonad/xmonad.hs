@@ -49,9 +49,10 @@ myBorderWidth = 2
 myModMask = mod4Mask
 
 -- Add gaps
-myLayout = avoidStruts $ mySmartSpacing $ layoutTall ||| (noBorders layoutFull)
+myLayout = avoidStruts $ myGap $ layoutTall ||| (noBorders layoutFull)
     where
-        myGap = spacingRaw False (Border 10 0 10 0) True (Border 0 10 0 10) True
+        myGap = spacingRaw False (Border 5 0 5 0) True (Border 0 5 0 5) True
+        mySpacing = spacing 5
         mySmartSpacing = smartSpacing 5
         layoutTall = Tall 1 (3/100) (1/2)
         layoutFull = Full
