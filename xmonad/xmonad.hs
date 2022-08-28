@@ -49,13 +49,13 @@ myBorderWidth = 2
 myModMask = mod4Mask
 
 -- Add gaps
-myLayout = avoidStruts $ myGap $ layoutTall ||| (noBorders layoutFull)
+myLayout = avoidStruts $ myGap $ layoutTall ||| layoutFull
     where
         myGap = spacingRaw False (Border 5 0 5 0) True (Border 0 5 0 5) True
         mySpacing = spacing 5
         mySmartSpacing = smartSpacing 5
-        layoutTall = Tall 1 (3/100) (1/2)
-        layoutFull = Full
+        layoutTall = spacing 3 $ Tall 1 (3/100) (1/2)
+        layoutFull = noBorders Full
 
 -- Remove default keybinding
 myRemoveKeys = 
