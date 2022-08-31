@@ -1,6 +1,5 @@
 so ~/.config/nvim/plugins.vim
-so ~/.config/nvim/coc.vim
-lua require('treesitter')
+lua require('init')
 " Install extensions for web-development
 " :CocInstall coc-tsserver coc-json coc-html coc-css coc-prettier
 " Install bat and ripgrep for full fzf features

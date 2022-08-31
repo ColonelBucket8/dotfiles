@@ -12,14 +12,20 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'vimwiki/vimwiki'
 " Plug 'sheerun/vim-polyglot'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'nvim-lua/plenary.nvim'
 
 " Color Schemes
 Plug 'joshdick/onedark.vim'
-Plug 'morhetz/gruvbox'
-Plug 'altercation/vim-colors-solarized'
-Plug 'arcticicestudio/nord-vim'
+" Plug 'morhetz/gruvbox'
+" Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim'
 Plug 'tomasr/molokai'
 Plug 'ayu-theme/ayu-vim'
