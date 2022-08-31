@@ -34,7 +34,9 @@ set laststatus=2
 set wildignorecase
 set relativenumber
 
-" ESC key
+" Keybinds
+" Insert mode
+" Bind esc key to kj"
 inoremap kj <Esc>
 inoremap " ""<left>
 inoremap ' ''<left>
@@ -45,6 +47,9 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
+" Normal mode
+nnoremap <C-j> :bn<CR>
+nnoremap <C-k> :bp<CR>
 nnoremap <C-a> :NERDTreeToggle<CR>
 nnoremap <silent> <C-f> :NERDTreeFind<CR>
 nnoremap <silent> <C-p> :Files<CR>
