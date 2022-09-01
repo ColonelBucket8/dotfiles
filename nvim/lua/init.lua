@@ -1,3 +1,5 @@
 require('treesitter')
 require('lsp')
 require('cmpconfig')
+require('lspsagaconfig')
+require('nvim-tree').setup()
