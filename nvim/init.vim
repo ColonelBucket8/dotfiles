@@ -32,6 +32,8 @@ set noshowmode
 set laststatus=2
 set wildignorecase
 set relativenumber
+set tabstop=2
+set shiftwidth=0
 
 " Keybinds
 " Insert mode
