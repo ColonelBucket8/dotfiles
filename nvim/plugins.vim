@@ -23,12 +23,10 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --producti
 
 " Color Schemes
 Plug 'joshdick/onedark.vim'
-" Plug 'morhetz/gruvbox'
-" Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
 Plug 'dracula/vim'
 Plug 'tomasr/molokai'
 Plug 'ayu-theme/ayu-vim'
-Plug 'drewtempelmeyer/palenight.vim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 call plug#end()
