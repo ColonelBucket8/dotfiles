@@ -9,7 +9,7 @@
 export VISUAL=vim
 export EDITOR="%VISUAL"
 
-export FZF_DEFAULT_COMMAND="--hidden -i"
+export FZF_DEFAULT_COMMAND="rg --hidden --files"
 
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
