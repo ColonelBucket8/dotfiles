@@ -4,3 +4,7 @@ require('config.lspsaga')
 require('config.cmp')
 require('nvim-tree').setup()
 require('config.lualine')
+require('keybindings')
+require('options')
+
+-- vim.keymap.set('n', 'lhs', function() print("real lua function") end)

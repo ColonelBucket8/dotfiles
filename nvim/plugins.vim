@@ -30,5 +30,3 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 call plug#end()
-
-
