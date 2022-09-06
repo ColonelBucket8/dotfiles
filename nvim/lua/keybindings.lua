@@ -11,7 +11,7 @@ keymap('n', '<Leader>p', "<Cmd>PrettierAsync<CR>")
 
 -- Insert mode
 keymap('i', 'kj', "<Esc>")
-keymap('i', '"', '""')
+keymap('i', '"', '""<left>')
 keymap('i', "'", "''<left>")
 keymap('i', '`', "``<left>")
 keymap('i', '(', "()<left>")
