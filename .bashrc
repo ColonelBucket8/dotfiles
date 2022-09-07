@@ -6,8 +6,8 @@
 [[ $- != *i* ]] && return
 
 # Set vim as default text editor
-export VISUAL=vim
-export EDITOR="%VISUAL"
+export VISUAL=nvim
+export EDITOR=${VISUAL}
 
 export FZF_DEFAULT_COMMAND="rg --hidden --files"
 
