@@ -34,29 +34,36 @@ myBar = "xmobar"
 myXmobarPP :: PP
 myXmobarPP = def 
     { ppSep             = magenta " | "
+    , ppVisible         = white . xmobarBorder "Top" "#ff5555" 2
     , ppTitleSanitize   = xmobarStrip
     , ppCurrent         = wrap "|" "|" . xmobarBorder "Top" "#8be9fd" 2
     , ppHidden          = white . wrap " " ""
-    , ppHiddenNoWindows = lowWhite . wrap " " ""
+    -- , ppHiddenNoWindows = lowWhite . wrap " " ""
     , ppUrgent          = red . wrap (yellow "!") (yellow "!")
     , ppOrder           = \[ws, l, _, wins] -> [ws, l, wins]
     , ppExtras          = [logTitles formatFocused formatUnfocused]
     }
   where 
-    formatFocused   = wrap (white    "[") (white    "]") . magenta . ppWindow
-    formatUnfocused = wrap (lowWhite "[") (lowWhite "]") . blue    . ppWindow
+    formatFocused   = wrap (white    "[") (white    "]") . green . ppWindow
+    formatUnfocused = wrap (lowWhite "[") (lowWhite "]") . blue . ppWindow
 
 
     ppWindow :: String -> String
     ppWindow = xmobarRaw . (\w -> if null w then "untitled" else w) . shorten 30
 
-    blue, lowWhite, magenta, red, white, yellow :: String -> String
+    blue, lowWhite, magenta, red, white, yellow, green, darkblue :: String -> String
+    -- xmobarColor :: String foregound color
+    --             -> String background color
+    --             -> String output string
+    --             -> String
     magenta  = xmobarColor "#ff79c6" ""
     blue     = xmobarColor "#bd93f9" ""
+    darkblue = xmobarColor "#090ece" ""
     white    = xmobarColor "#f8f8f2" ""
     yellow   = xmobarColor "#f1fa8c" ""
     red      = xmobarColor "#ff5555" ""
     lowWhite = xmobarColor "#bbbbbb" ""
+    green    = xmobarColor "#00ff00" ""
 -- toggleStrutsKey XConfig {XMonad.modMask = modMask} = {modMask, xK_b}
 
 myConfig = def
@@ -118,6 +125,7 @@ myStartupHook = do
     spawnOnce "xrandr --output DVI-D-0 --mode 1920x1080 --rate 120.00 --auto --left-of HDMI-0 --output HDMI-0"
     spawnOnce "xautolock -detectsleep -time 10 -locker 'i3lock -c 000000'"
     spawnOnce "conky"
+    spawnOnce "trayer --edge top --align right --SetDockType true --SetPartialStrut true --transparent true --width 5 --height 22 --tint 0x000000 --monitor 0"
     spawn "feh --bg-scale ~/Pictures/Wallpapers/anime-4.jpg"
     spawn "picom --experimental-backends"
     spawn "fcitx5"
@@ -125,7 +133,6 @@ myStartupHook = do
     -- Lockscreen with background image, png only
     -- spawn "xautolock -detectsleep -time 10 -locker 'i3lock -i ~/Pictures/Wallpapers/jabami-yumeko.png"
     spawn "xmobar -x 1 ~/.xmobarrc1"
-    spawn "trayer --edge top --align right --SetDockType true --SetPartialStrut true --transparent true --width 5 --height 22 --tint 0x000000 --monitor 0"
     -- spawn "conky"
     -- System tray
     -- spawn "stalonetray"
