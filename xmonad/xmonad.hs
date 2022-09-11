@@ -91,10 +91,11 @@ myStartupHook = do
     spawn "feh --bg-scale ~/Pictures/Wallpapers/anime-4.jpg"
     spawn "picom --experimental-backends"
     spawn "fcitx5"
-    -- spawn "nm-applet"
+    spawn "nm-applet"
     -- Lockscreen with background image, png only
     -- spawn "xautolock -detectsleep -time 10 -locker 'i3lock -i ~/Pictures/Wallpapers/jabami-yumeko.png"
-    spawn "xmobar -x 1 ~/.xmobarrc"
+    spawn "xmobar -x 1 ~/.xmobarrc1"
+    spawn "trayer --edge top --align right --SetDockType true --SetPartialStrut true --transparent true --width 5 --height 22 --tint 0x000000 --monitor 0"
     -- spawn "conky"
     -- System tray
     -- spawn "stalonetray"
