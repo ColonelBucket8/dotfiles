@@ -125,7 +125,7 @@ myStartupHook = do
     spawnOnce "xrandr --output DVI-D-0 --mode 1920x1080 --rate 120.00 --auto --left-of HDMI-0 --output HDMI-0"
     spawnOnce "xautolock -detectsleep -time 10 -locker 'i3lock -c 000000'"
     spawnOnce "conky"
-    spawnOnce "trayer --edge top --align right --SetDockType true --SetPartialStrut true --transparent true --width 5 --height 22 --tint 0x000000 --monitor 0"
+    spawnOnce "trayer --edge top --align right --SetDockType true --SetPartialStrut true --transparent true --width 6 --height 22 --tint 0x000000 --expand true"
     spawn "feh --bg-scale ~/Pictures/Wallpapers/anime-4.jpg"
     spawn "picom --experimental-backends"
     spawn "fcitx5"
