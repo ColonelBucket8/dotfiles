@@ -34,10 +34,10 @@ myBar = "xmobar"
 myXmobarPP :: PP
 myXmobarPP = def 
     { ppSep             = magenta " | "
-    , ppVisible         = white . xmobarBorder "Top" "#ff5555" 2
+    , ppVisible         = white . xmobarBorder "Top" "#ff5555" 2 . pad
     , ppTitleSanitize   = xmobarStrip
-    , ppCurrent         = wrap "|" "|" . xmobarBorder "Top" "#8be9fd" 2
-    , ppHidden          = white . wrap " " ""
+    , ppCurrent         = xmobarBorder "Full" "#8be9fd" 2 . pad
+    , ppHidden          = white . pad
     -- , ppHiddenNoWindows = lowWhite . wrap " " ""
     , ppUrgent          = red . wrap (yellow "!") (yellow "!")
     , ppOrder           = \[ws, l, _, wins] -> [ws, l, wins]
