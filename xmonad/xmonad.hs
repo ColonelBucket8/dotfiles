@@ -31,6 +31,18 @@ main = xmonad
 -- Command to launch the bar
 myBar = "xmobar"
 
+myConfig = def
+    { terminal    = myTerminal
+    , modMask     = myModMask
+    , borderWidth = myBorderWidth
+    , layoutHook  = myLayout
+    , focusFollowsMouse = myFocusFollowsMouse
+    , startupHook = myStartupHook
+    , logHook     = myLogHook
+    , manageHook  = myManageHook
+    , handleEventHook = myHandleEventHook
+    } `removeKeys` myRemoveKeys `additionalKeys` myKeys
+
 myXmobarPP :: PP
 myXmobarPP = def 
     { ppSep             = magenta " | "
@@ -65,18 +77,6 @@ myXmobarPP = def
     lowWhite = xmobarColor "#bbbbbb" ""
     green    = xmobarColor "#00ff00" ""
 -- toggleStrutsKey XConfig {XMonad.modMask = modMask} = {modMask, xK_b}
-
-myConfig = def
-    { terminal    = myTerminal
-    , modMask     = myModMask
-    , borderWidth = myBorderWidth
-    , layoutHook  = myLayout
-    , focusFollowsMouse = myFocusFollowsMouse
-    , startupHook = myStartupHook
-    , logHook     = myLogHook
-    , manageHook  = myManageHook
-    , handleEventHook = myHandleEventHook
-    } `removeKeys` myRemoveKeys `additionalKeys` myKeys
 
 myTerminal :: String
 myTerminal = "alacritty"
