@@ -1,3 +1,4 @@
+vim.g.mapleader = " "
 local opt = vim.opt
 local cmd = vim.cmd
 
@@ -13,6 +14,7 @@ opt.shiftwidth = 0
 -- Color Scheme
 opt.termguicolors = true
 vim.g.tokyonight_style = "night"
+vim.g.everforest_background = "hard"
 opt.background = "dark"
 cmd('colorscheme tokyonight')
 
