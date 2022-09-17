@@ -18,6 +18,7 @@ keymap('n', '<Leader>ot', "<Cmd>term<CR>")
 
 -- Search
 keymap('n', '<Leader>sc', "<Cmd>Commands<CR>")
+keymap('n', '<Leader>sn', "<Cmd>Files ~/.config/nvim<CR>")
 
 -- Code
 keymap('n', '<Leader>cp', "<Cmd>PrettierAsync<CR>")
