@@ -26,6 +26,8 @@ keymap('n', '<Leader>cp', "<Cmd>PrettierAsync<CR>")
 -- Buffer
 keymap('n', '<Leader>bf', "<Cmd>Buffers<CR>")
 keymap('n', '<Leader>bd', "<Cmd>bd<CR>")
+keymap('n', '<Leader>bn', "<Cmd>bn<CR>")
+keymap('n', '<Leader>bp', "<Cmd>bp<CR>")
 
 -- Git
 keymap('n', '<Leader>gd', "<Cmd>Gvdiffsplit<CR>")
