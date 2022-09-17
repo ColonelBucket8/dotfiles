@@ -35,6 +35,7 @@ keymap('n', '<Leader>gd', "<Cmd>Gvdiffsplit<CR>")
 keymap('n', '<Leader>gh', "<Cmd>Git<CR>")
 keymap('n', '<Leader>gp', "<Cmd>Git push<CR>")
 keymap('n', '<Leader>gr', "<Cmd>GRename<CR>")
+keymap('n', '<Leader>gb', "<Cmd>Git blame<CR>")
 
 -- Insert mode
 keymap('i', 'kj', "<Esc>")
