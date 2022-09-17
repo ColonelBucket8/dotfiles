@@ -1,5 +1,6 @@
 vim.g.mapleader = ' '
 local keymap = vim.keymap.set
+local cmd = vim.cmd
 
 -- Normal mode
 -- File
@@ -14,7 +15,7 @@ keymap('n', '<Leader>pg', "<Cmd>GFiles<CR>")
 keymap('n', '<Leader>os', "<Cmd>NvimTreeToggle<CR>")
 keymap('n', '<Leader>oc', "<Cmd>NvimTreeFindFile<CR>")
 keymap('n', '<Leader>of', "<Cmd>NvimTreeFocus<CR>")
-keymap('n', '<Leader>ot', "<Cmd>term<CR>")
+keymap('n', '<Leader>ot', "<Cmd>term zsh<CR>")
 
 -- Search
 keymap('n', '<Leader>sc', "<Cmd>Commands<CR>")
@@ -47,3 +48,8 @@ keymap('i', '[', "[]<left>")
 keymap('i', '{', "{}<left>")
 keymap('i', '{<CR>', "{<CR>}<ESC>O")
 keymap('i', '{;<CR>', "{<CR>};<ESC>O")
+
+-- Terminal mode
+cmd([[
+tnoremap kj <C-\><C-n>
+]])
