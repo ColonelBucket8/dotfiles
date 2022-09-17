@@ -19,18 +19,20 @@ keymap('n', '<Leader>ot', "<Cmd>term<CR>")
 -- Search
 keymap('n', '<Leader>sc', "<Cmd>Commands<CR>")
 keymap('n', '<Leader>sn', "<Cmd>Files ~/.config/nvim<CR>")
+keymap('n', '<Leader>sh', "<Cmd>History<CR>")
 
 -- Code
 keymap('n', '<Leader>cp', "<Cmd>PrettierAsync<CR>")
 
 -- Buffer
-keymap('n', '<Leader>bf', "<Cmd>Buffers<CR>")
+keymap('n', '<Leader>bl', "<Cmd>Buffers<CR>")
 keymap('n', '<Leader>bd', "<Cmd>bd<CR>")
 keymap('n', '<Leader>bn', "<Cmd>bn<CR>")
 keymap('n', '<Leader>bp', "<Cmd>bp<CR>")
 
 -- Git
 keymap('n', '<Leader>gd', "<Cmd>Gvdiffsplit<CR>")
+keymap('n', '<Leader>gh', "<Cmd>Git<CR>")
 
 -- Insert mode
 keymap('i', 'kj', "<Esc>")
