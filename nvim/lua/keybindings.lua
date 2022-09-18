@@ -39,6 +39,9 @@ keymap('n', '<Leader>gp', "<Cmd>Git push<CR>")
 keymap('n', '<Leader>gr', ":GRename<Space>")
 keymap('n', '<Leader>gb', "<Cmd>Git blame<CR>")
 
+-- Help
+keymap('n', '<Leader>hk', "<Cmd>edit ~/.config/nvim/lua/keybindings.lua<CR>")
+
 -- Insert mode
 keymap('i', 'kj', "<Esc>")
 keymap('i', '"', '""<left>')
