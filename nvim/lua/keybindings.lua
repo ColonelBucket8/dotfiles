@@ -12,8 +12,8 @@ keymap('n', '<Leader>ps', "<Cmd>Rg<CR>")
 keymap('n', '<Leader>pg', "<Cmd>GFiles<CR>")
 
 -- Open
-keymap('n', '<Leader>os', "<Cmd>NvimTreeToggle<CR>")
-keymap('n', '<Leader>oc', "<Cmd>NvimTreeFindFile<CR>")
+keymap('n', '<Leader>op', "<Cmd>NvimTreeToggle<CR>")
+keymap('n', '<Leader>oP', "<Cmd>NvimTreeFindFile<CR>")
 keymap('n', '<Leader>of', "<Cmd>NvimTreeFocus<CR>")
 keymap('n', '<Leader>ot', "<Cmd>term zsh<CR>")
 
