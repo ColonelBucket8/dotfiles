@@ -5,9 +5,11 @@ local cmd = vim.cmd
 -- Normal mode
 -- File
 keymap('n', '<Leader>fs', "<Cmd>update<CR>")
+keymap('n', '<Leader>ff', "<Cmd>Files<CR>")
 
 -- Project
 keymap('n', '<Leader>pf', "<Cmd>Files<CR>")
+keymap('n', '<C-p>', "<Cmd>Files<CR>")
 keymap('n', '<Leader>ps', "<Cmd>Rg<CR>")
 keymap('n', '<Leader>pg', "<Cmd>GFiles<CR>")
 
@@ -35,7 +37,8 @@ keymap('n', '<Leader>bp', "<Cmd>bp<CR>")
 -- Git
 keymap('n', '<Leader>gd', "<Cmd>Gvdiffsplit<CR>")
 keymap('n', '<Leader>gh', "<Cmd>Git<CR>")
-keymap('n', '<Leader>gp', "<Cmd>Git push<CR>")
+keymap('n', '<Leader>gp', "<Cmd>Git pull<CR>")
+keymap('n', '<Leader>gP', "<Cmd>Git push<CR>")
 keymap('n', '<Leader>gr', ":GRename<Space>")
 keymap('n', '<Leader>gb', "<Cmd>Git blame<CR>")
 
