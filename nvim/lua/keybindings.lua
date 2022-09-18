@@ -26,7 +26,8 @@ keymap('n', '<Leader>sh', "<Cmd>History<CR>")
 keymap('n', '<Leader>cp', "<Cmd>PrettierAsync<CR>")
 
 -- Buffer
-keymap('n', '<Leader>bl', "<Cmd>Buffers<CR>")
+keymap('n', '<Leader>bi', "<Cmd>Buffers<CR>")
+keymap('n', '<Leader>bl', "<C-6>")
 keymap('n', '<Leader>bd', "<Cmd>bd<CR>")
 keymap('n', '<Leader>bn', "<Cmd>bn<CR>")
 keymap('n', '<Leader>bp', "<Cmd>bp<CR>")
