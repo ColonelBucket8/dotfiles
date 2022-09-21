@@ -3,8 +3,34 @@ local db = require('dashboard')
 
 -- linux
 db.preview_command = 'ueberzug'
---
-db.preview_file_path = home .. '/Pictures/Wallpapers/anime-girl-looking-at-pink-flower.jpg'
+-- [[
+vim.cmd([[
+let g:dashboard_custom_header =  [
+      \'             ▄▄▀▀▀▀▀▀▀▀▄▄              ',
+      \'          ▄▀▀            ▀▄▄           ',
+      \'        ▄▀                  ▀▄         ',
+      \'       ▌             ▀▄       ▀▀▄      ',
+      \'      ▌                ▀▌        ▌     ',
+      \'     ▐                  ▌        ▐     ',
+      \'     ▌▐    ▐    ▐       ▌         ▌    ',
+      \'    ▐ ▌    ▌  ▐ ▌      ▐       ▌▐ ▐    ',
+      \'    ▐ ▌    ▌▄▄▀▀▌▌     ▐▀▌▀▌▄  ▐ ▌ ▌   ',
+      \'     ▌▌    ▐▀▄▌▌▐▐    ▐▐▐ ▐ ▌▌ ▐ ▌▄▐   ',
+      \'   ▄▀▄▐    ▌▌▄▀▄▐ ▌▌ ▐ ▌▄▀▄ ▐  ▐ ▌ ▀▄  ',
+      \'  ▀▄▀  ▌  ▄▀ ▌█▐  ▐▐▀   ▌█▐ ▀▄▐ ▌▌   ▀ ',
+      \'   ▀▀▄▄▐ ▀▄▀ ▀▄▀        ▀▄▀▄▀ ▌ ▐      ',
+      \'      ▀▐▀▄ ▀▄        ▐      ▀▌▐        ',
+      \'        ▌ ▌▐ ▀              ▐ ▐        ',
+      \'        ▐ ▐ ▌    ▄▄▀▀▀▀▄    ▌ ▐        ',
+      \'         ▌▐ ▐▄   ▐     ▌  ▄▀  ▐        ',
+      \'        ▐  ▌▐▐▀▄  ▀▄▄▄▀ ▄▀▐   ▐        ',
+      \'        ▌▌ ▌▐ ▌ ▀▄▄    ▄▌▐ ▌  ▐        ',
+      \'       ▐ ▐ ▐▐ ▌    ▀▀▄▀▌▐  ▌  ▌        ',
+      \'       ▌  ▌▐ ▌        ▐▀▄▌ ▐           ',
+      \]
+]])
+--]]
+db.preview_file_path = home .. '/Pictures/Wallpapers/anime-6.jpg'
 db.preview_file_height = 11
 db.preview_file_width = 50
 db.custom_center = {
