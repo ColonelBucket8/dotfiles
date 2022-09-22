@@ -28,9 +28,6 @@ main = xmonad
      . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey
      $ myConfig
 
--- Command to launch the bar
-myBar = "xmobar"
-
 myConfig = def
     { terminal    = myTerminal
     , modMask     = myModMask
@@ -50,6 +47,7 @@ myXmobarPP = def
     , ppTitleSanitize   = xmobarStrip
     , ppCurrent         = xmobarBorder "Full" "#8be9fd" 2 . pad
     , ppHidden          = white . pad
+    -- , ppLayout          = wrap "" ""
     -- , ppHiddenNoWindows = lowWhite . wrap " " ""
     , ppUrgent          = red . wrap (yellow "!") (yellow "!")
     , ppOrder           = \[ws, l, _, wins] -> [ws, l, wins]
@@ -76,7 +74,6 @@ myXmobarPP = def
     red      = xmobarColor "#ff5555" ""
     lowWhite = xmobarColor "#bbbbbb" ""
     green    = xmobarColor "#00ff00" ""
--- toggleStrutsKey XConfig {XMonad.modMask = modMask} = {modMask, xK_b}
 
 myTerminal :: String
 myTerminal = "alacritty"
@@ -126,12 +123,13 @@ myStartupHook = do
     spawnOnce "xautolock -detectsleep -time 10 -locker 'i3lock -c 000000'"
     spawnOnce "conky"
     spawnOnce "trayer --edge top --align right --SetDockType true --SetPartialStrut true --transparent true --width 6 --height 22 --tint 0x000000 --expand true"
-    spawn "feh --bg-scale ~/Pictures/Wallpapers/anime-4.jpg"
+    spawnOnce "lxqt-policykit-agent"
+    spawn "feh --bg-scale ~/Pictures/Wallpapers/anime-girl-looking-at-pink-flower.jpg"
     spawn "picom --experimental-backends"
     spawn "fcitx5"
     spawn "nm-applet"
     -- Lockscreen with background image, png only
-    -- spawn "xautolock -detectsleep -time 10 -locker 'i3lock -i ~/Pictures/Wallpapers/jabami-yumeko.png"
+    -- spawnOnce "xautolock -detectsleep -time 10 -locker 'i3lock -i ~/Pictures/Wallpapers/jabami-yumeko.png"
     spawn "xmobar -x 1 ~/.xmobarrc1"
     -- spawn "conky"
     -- System tray
