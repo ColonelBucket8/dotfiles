@@ -9,6 +9,7 @@
 (setq user-full-name "John Doe"
       user-mail-address "john@doe.com")
 
+(set-face-attribute `default nil :height 110)
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
 ;; - `doom-font' -- the primary font to use
@@ -32,7 +33,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-tokyo-night)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -78,3 +79,10 @@
 (require `key-chord)
 (key-chord-mode t)
 (key-chord-define-global "kj" `evil-normal-state)
+
+(require `lsp)
+(require `tree-sitter)
+
+(require `prettier-js)
+(add-hook 'js2-mode-hook 'prettier-js-mode)
+(add-hook 'web-mode-hook 'prettier-js-mode)
