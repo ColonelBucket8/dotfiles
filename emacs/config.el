@@ -81,7 +81,12 @@
 (key-chord-define-global "kj" `evil-normal-state)
 
 (require `lsp)
+(add-hook 'js2-mode-hook 'lsp)
+(add-hook 'web-mode-hook 'lsp)
+
 (require `tree-sitter)
+(add-hook 'js2-mode-hook 'tree-sitter-hl-mode)
+(add-hook 'web-mode-hook 'tree-sitter-hl-mode)
 
 (require `prettier-js)
 (add-hook 'js2-mode-hook 'prettier-js-mode)
