@@ -81,6 +81,7 @@
 (key-chord-mode t)
 (key-chord-define-global "kj" `evil-normal-state)
 
+(add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescript-mode))
 (require `lsp)
 (add-hook 'js2-mode-hook 'lsp)
 (add-hook 'web-mode-hook 'lsp)
