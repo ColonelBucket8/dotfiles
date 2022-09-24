@@ -9,6 +9,7 @@
 (setq user-full-name "John Doe"
       user-mail-address "john@doe.com")
 
+;; set font size 110 = 11 px
 (set-face-attribute `default nil :height 110)
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -83,6 +84,8 @@
 (require `lsp)
 (add-hook 'js2-mode-hook 'lsp)
 (add-hook 'web-mode-hook 'lsp)
+(add-hook 'haskell-mode-hook 'lsp)
+(add-hook 'haskell-literate-mode-hook #'lsp)
 
 (require `tree-sitter)
 (add-hook 'js2-mode-hook 'tree-sitter-hl-mode)
@@ -91,3 +94,5 @@
 (require `prettier-js)
 (add-hook 'js2-mode-hook 'prettier-js-mode)
 (add-hook 'web-mode-hook 'prettier-js-mode)
+
+(setq large-file-warning-threshold nil)
