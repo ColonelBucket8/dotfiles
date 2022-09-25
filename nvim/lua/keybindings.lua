@@ -36,14 +36,14 @@ keymap('n', '<Leader>bp', "<Cmd>bp<CR>")
 
 -- Git
 keymap('n', '<Leader>gd', "<Cmd>Gvdiffsplit<CR>")
-keymap('n', '<Leader>gh', "<Cmd>Git<CR>")
+keymap('n', '<Leader>gg', "<Cmd>Git<CR>")
 keymap('n', '<Leader>gp', "<Cmd>Git pull<CR>")
 keymap('n', '<Leader>gP', "<Cmd>Git push<CR>")
 keymap('n', '<Leader>gr', ":GRename<Space>")
 keymap('n', '<Leader>gb', "<Cmd>Git blame<CR>")
 
 -- Help
-keymap('n', '<Leader>hk', "<Cmd>edit ~/.config/nvim/lua/keybindings.lua<CR>")
+keymap('n', '<Leader>hk', "<Cmd>view ~/.config/nvim/lua/keybindings.lua<CR>")
 
 -- Insert mode
 keymap('i', 'kj', "<Esc>")
