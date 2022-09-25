@@ -46,7 +46,7 @@ keymap('n', '<Leader>gb', "<Cmd>Git blame<CR>")
 keymap('n', '<Leader>hk', "<Cmd>view ~/.config/nvim/lua/keybindings.lua<CR>")
 
 -- Insert mode
-keymap('i', 'kj', "<Esc>")
+keymap('i', 'jj', "<Esc>")
 keymap('i', '"', '""<left>')
 keymap('i', "'", "''<left>")
 keymap('i', '`', "``<left>")
