@@ -78,8 +78,10 @@
 ;; they are implemented.
 
 (require `key-chord)
-(key-chord-mode t)
-(key-chord-define-global "kj" `evil-normal-state)
+;; Exit insert mode by pressing j and then j quickly
+(setq key-chord-two-keys-delay 0.5)
+(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+(key-chord-mode 1)
 
 (add-to-list 'auto-mode-alist '("\\.tsx?\\'" . typescript-mode))
 (require `lsp)
