@@ -51,13 +51,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+Shift+c kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
+bindsym $mod+p exec --no-startup-id rofi -show drun -show-icons
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -155,7 +155,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+x move workspace to output right
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+q reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -222,7 +222,7 @@ bar {
 #}
 
 # Wallpaper
-exec_always --no-startup-id feh --bg-fill /home/freedom/Pictures/Wallpapers/fate-saber.jpg
+exec_always --no-startup-id feh --bg-fill /home/freedom/Pictures/Wallpapers/anime-9.jpg
 
 # i3-gaps
 for_window [class=".*"] border pixel 2
