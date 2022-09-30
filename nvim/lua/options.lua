@@ -15,8 +15,9 @@ opt.shiftwidth = 0
 opt.termguicolors = true
 vim.g.tokyonight_style = "night"
 vim.g.everforest_background = "hard"
+vim.g.gruvbox_contrast_dark = "hard"
 opt.background = "dark"
-cmd('colorscheme tokyonight')
+cmd('colorscheme gruvbox')
 
 -- Vimwiki
 cmd([[
