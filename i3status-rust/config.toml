@@ -4,7 +4,7 @@
 [theme]
 name = "dracula"
 [icons]
-name = "awesome6"
+name = "material-nf"
 
 [[block]]
 block = "focused_window"
