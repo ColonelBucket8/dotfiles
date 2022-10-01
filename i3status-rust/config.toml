@@ -1,6 +1,10 @@
-theme = "dracula"
-icons = "awesome6"
+# theme = "dracula"
+# icons = "awesome6"
 #icons_format=" <span font_family='NotoSans Nerd Font'>{icon}</span> "
+[theme]
+name = "dracula"
+[icons]
+name = "awesome6"
 
 [[block]]
 block = "focused_window"
@@ -22,7 +26,6 @@ alert = 10.0
 [block.theme_overrides]
 idle_bg = "#d9534f"
 idle_fg = "#000000"
-
 
 [[block]]
 block = "memory"
