@@ -13,6 +13,8 @@ import XMonad.Layout.Spacing
 import XMonad.Layout.ThreeColumns
 import XMonad.Layout.ResizableTile
 import XMonad.Layout.LayoutModifier(ModifiedLayout)
+import XMonad.Layout.MultiToggle
+import XMonad.Layout.MultiToggle.Instances
 
 import XMonad.Util.Loggers
 import XMonad.Util.SpawnOnce
@@ -38,6 +40,7 @@ myConfig = def
     , logHook     = myLogHook
     , manageHook  = myManageHook
     , handleEventHook = myHandleEventHook
+    , focusedBorderColor = myFocusedBorderColor
     } `removeKeys` myRemoveKeys `additionalKeys` myKeys
 
 myXmobarPP :: PP
@@ -88,17 +91,20 @@ myBorderWidth = 2
 myModMask = mod4Mask
 
 -- Add gaps
-myLayout = avoidStruts $ myGap $ layoutTall ||| layoutFull
+myLayout = avoidStruts $ mySmartSpacing $ layoutTall ||| layoutFull 
     where
         myGap = spacingRaw False (Border 5 0 5 0) True (Border 0 5 0 5) True
         mySpacing = spacing 5
         mySmartSpacing = smartSpacing 5
         layoutTall = renamed [Replace "Tall"] $ spacing 3 $ Tall 1 (3/100) (1/2)
         layoutFull = noBorders Full
+        -- layoutFull = mkToggle (NBFULL ?? EOT) Full
+
+myFocusedBorderColor = "#8be9fd"
 
 -- Remove default keybinding
 myRemoveKeys = 
- [ ((myModMask .|. shiftMask, xK_Return))]
+ [( (myModMask .|. shiftMask, xK_Return) )]
 
 -- Custom keybinding
 myKeys =
@@ -119,18 +125,18 @@ myHandleEventHook = swallowEventHook (className =? "Alacritty" <||> className =?
 
 -- Autostart programs
 myStartupHook = do
-    spawnOnce "xrandr --output DVI-D-0 --mode 1920x1080 --rate 120.00 --auto --left-of HDMI-0 --output HDMI-0"
+    -- spawnOnce "xrandr --output DVI-D-0 --mode 1920x1080 --rate 120.00 --auto --left-of HDMI-0 --output HDMI-0"
     spawnOnce "xautolock -detectsleep -time 10 -locker 'i3lock -c 000000'"
     spawnOnce "conky"
-    spawnOnce "trayer --edge top --align right --SetDockType true --SetPartialStrut true --transparent true --width 6 --height 22 --tint 0x000000 --expand true"
+    -- spawnOnce "trayer --edge top --align right --SetDockType true --SetPartialStrut true --transparent false --width 6 --height 22 --tint 0x000000 --expand true"
     spawnOnce "lxqt-policykit-agent"
-    spawn "feh --bg-scale ~/Pictures/Wallpapers/anime-girl-looking-at-pink-flower.jpg"
+    spawn "feh --bg-max ~/Pictures/Wallpapers/anime-9.jpg"
     spawn "picom --experimental-backends"
     spawn "fcitx5"
     spawn "nm-applet"
     -- Lockscreen with background image, png only
     -- spawnOnce "xautolock -detectsleep -time 10 -locker 'i3lock -i ~/Pictures/Wallpapers/jabami-yumeko.png"
-    spawn "xmobar -x 1 ~/.xmobarrc1"
+    spawn "xmobar -x 1 ~/.xmobarrc"
     -- spawn "conky"
     -- System tray
     -- spawn "stalonetray"
