@@ -26,6 +26,7 @@ keymap('n', '<Leader>sh', "<Cmd>History<CR>")
 
 -- Code
 keymap('n', '<Leader>cp', "<Cmd>PrettierAsync<CR>")
+keymap('n', '<leader>cf', function() vim.lsp.buf.format { async = true } end)
 
 -- Buffer
 keymap('n', '<Leader>bi', "<Cmd>Buffers<CR>")
