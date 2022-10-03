@@ -54,6 +54,14 @@ interval = 1
 idle_bg = "#5cb85c"
 idle_fg = "#000000"
 
+# [[block]]
+# block = "battery"
+# interval = 10
+# format = "{percentage} {time}"
+# [block.theme_overrides]
+# idle_bg = "#5cb85c"
+# idle_fg = "#000000"
+
 [[block]]
 block = "sound"
 [block.theme_overrides]
@@ -65,6 +73,3 @@ block = "time"
 interval = 5
 format = "%a %d/%m %R"
 
-#[[block]]
-#block = "battery"
-#if_command = "test -e /sys/class/power_supply/BAT0"
