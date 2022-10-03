@@ -8,10 +8,6 @@ require('config.nvimtree')
 require('config.lualine')
 require('config.dap')
 require('config.dashboard')
--- require('null-ls').setup({
---   sources = {
---     require('null-ls').builtins.formatting.prettier
---   }
--- })
+require('config.null-ls')
 -- require('which-key').setup()
 require('keybindings')
