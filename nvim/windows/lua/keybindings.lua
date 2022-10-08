@@ -1,6 +1,7 @@
 vim.g.mapleader = ' '
 local keymap = vim.keymap.set
 local cmd = vim.cmd
+local builtin = require('telescope.builtin')
 
 -- Normal mode
 -- File
@@ -12,6 +13,11 @@ keymap('n', '<Leader>pf', "<Cmd>Files<CR>")
 keymap('n', '<C-p>', "<Cmd>Files<CR>")
 keymap('n', '<Leader>ps', "<Cmd>Rg<CR>")
 keymap('n', '<Leader>pg', "<Cmd>GFiles<CR>")
+keymap('n', '<Leader>pf', builtin.find_files, {})
+keymap('n', '<Leader>pg', builtin.live_grep, {})
+keymap('n', '<Leader>pb', builtin.buffers, {})
+keymap('n', '<Leader>ph', builtin.help_tags, {})
+keymap('n', '<Leader>pc', builtin.commands, {})
 
 -- Open
 keymap('n', '<Leader>op', "<Cmd>NvimTreeToggle<CR>")
@@ -20,9 +26,9 @@ keymap('n', '<Leader>of', "<Cmd>NvimTreeFocus<CR>")
 keymap('n', '<Leader>ot', "<Cmd>term fish<CR>")
 
 -- Search
-keymap('n', '<Leader>sc', "<Cmd>Commands<CR>")
-keymap('n', '<Leader>sn', "<Cmd>Files ~/AppData/Local/nvim<CR>")
-keymap('n', '<Leader>sh', "<Cmd>History<CR>")
+-- keymap('n', '<Leader>sc', "<Cmd>Commands<CR>")
+-- keymap('n', '<Leader>sn', "<Cmd>Files ~/AppData/Local/nvim<CR>")
+-- keymap('n', '<Leader>sh', "<Cmd>History<CR>")
 
 -- Code
 -- keymap('n', '<Leader>cp', "<Cmd>PrettierAsync<CR>")
