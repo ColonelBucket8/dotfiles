@@ -21,9 +21,18 @@
     "when": "inQuickOpen"
   },
   {
+    "key": "ctrl+shift+]",
+    "command": "merge.goToNextConflict"
+  },
+  {
+    "key": "ctrl+shift+[",
+    "command": "merge.goToPreviousConflict"
+  },
+  {
     "command": "vscode-neovim.compositeEscape1",
     "key": "j",
     "when": "neovim.mode == insert && editorTextFocus",
     "args": "j"
   }
 ]
+
