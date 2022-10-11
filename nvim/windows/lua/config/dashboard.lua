@@ -1,4 +1,4 @@
--- local home = os.getenv('HOME')
+local home = os.getenv('UserProfile')
 local db = require('dashboard')
 
 db.preview_command = 'cat'
@@ -31,7 +31,7 @@ let g:dashboard_custom_header =  [
       \]
 ]])
 --]]
-db.preview_file_path = 'C:\\Users\\freed\\AppData\\Local\\nvim\\lua\\config\\dashboard.cat'
+db.preview_file_path = home .. '\\AppData\\Local\\nvim\\lua\\config\\dashboard.cat'
 db.preview_file_height = 20
 db.preview_file_width = 50
 db.custom_center = {
@@ -46,13 +46,13 @@ db.custom_center = {
     {icon = '  ',
     desc = 'Find File                               ',
     action = 'Files',
-    shortcut = 'CTRL p'},
+    shortcut = 'SPC p f'},
     {icon = '  ',
     desc = 'File Browser                            ',
     action =  'NvimTreeToggle',
-    shortcut = 'CTRL a'},
+    shortcut = 'SPC o p'},
     {icon = '  ',
     desc = 'Find word                                ',
     action = 'Rg',
-    shortcut = 'SPC f'},
+    shortcut = 'SPC p g'},
   }
