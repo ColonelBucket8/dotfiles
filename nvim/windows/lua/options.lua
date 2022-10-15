@@ -14,10 +14,12 @@ opt.shiftwidth = 0
 
 -- Color Scheme
 opt.termguicolors = true
-vim.g.tokyonight_style = "night"
 vim.g.gruvbox_contrast_dark = "hard"
 opt.background = "dark"
-cmd('colorscheme gruvbox')
+cmd([[ 
+colorscheme tokyonight 
+hi LineNr guifg=#41a6b5
+]])
 
 -- Vimwiki
 cmd([[
