@@ -14,10 +14,12 @@ bar:
   components_left:
     - type: "workspaces"
       focused_workspace_background: "#41a6b5"
+      focused_workspace_border_width: "1"
+      focused_workspace_border_color: "#2ac3de"
       displayed_workspace_background: "#ff9e64"
       default_workspace_background: "#737aa2"
-      border_color: "#7aa2f7"
-      border_width: "1"
+      # border_color: "#7aa2f7"
+      # border_width: "1"
   components_right:
     - type: "clock"
       time_formatting: "hh:mm tt  ddd MMM d"
