@@ -193,20 +193,28 @@ bar {
   font pango:Sauce Code Pro Nerd Font 9
   status_command i3status-rs /home/freedom/.config/i3status-rust/config.toml
 	position top
-  # colors {
-  #   background #282A36
-  #   statusline #F8F8F2
-  #   separator  #44475A
+  colors {
+    background #24283b
+    # statusline #000000
+    # separator  #000000
 
-  #   focused_workspace  #44475A #44475A #F8F8F2
-  #   active_workspace   #282A36 #44475A #F8F8F2
-  #   inactive_workspace #282A36 #282A36 #BFBFBF
+    focused_workspace  #41a6b5 #3d59a1 #c0caf5
+    active_workspace   #ff9e64 #44475A #c0caf5
+    inactive_workspace #282A36 #292e42 #c0caf5
   #   urgent_workspace   #FF5555 #FF5555 #F8F8F2
   #   binding_mode       #FF5555 #FF5555 #F8F8F2
-  # }
+  }
   # tray_output DVI-D-0
   # tray_output HDMI-0
 }
+
+# tokyonight theme
+# class                 border  bground text    indicator child_border
+client.focused          #41a6b5 #3d59a1 #c0caf5 #41a6b5   #41a6b5
+client.focused_inactive #44475A #44475A #c0caf5 #44475A   #44475A
+client.unfocused        #282A36 #24283b #c0caf5 #282A36   #282A36
+# client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+# client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 
 # dracula theme
 # class                 border  bground text    indicator child_border
