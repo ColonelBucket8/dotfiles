@@ -210,7 +210,7 @@ bar {
 
 # tokyonight theme
 # class                 border  bground text    indicator child_border
-client.focused          #41a6b5 #3d59a1 #c0caf5 #41a6b5   #41a6b5
+client.focused          #41a6b5 #3d59a1 #c0caf5 #41a6b5   #3d59a1
 client.focused_inactive #44475A #44475A #c0caf5 #44475A   #44475A
 client.unfocused        #282A36 #24283b #c0caf5 #282A36   #282A36
 # client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
