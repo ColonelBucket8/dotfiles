@@ -104,27 +104,23 @@ local lsp_flags = {
 --   }
 -- }
 
-require('lspconfig')['tsserver'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  settings = {
-    includeCompletionsForModuleExports = true,
-  }
-}
+local servers = { "tsserver", "eslint", "rust_analyzer", "sumneko_lua", "bashls" }
 
--- require('lspconfig')['hls'].setup {
+for _, server in pairs(servers) do
+    require("lspconfig")[server].setup({
+        on_attach = on_attach,
+        flags = lsp_flags,
+    })
+end
+
+-- require('lspconfig')['sumneko_lua'].setup {
 --   on_attach = on_attach,
 --   flags = lsp_flags,
+--   settings = {
+--     Lua = {
+--       diagnostics = {
+--         globals = { 'vim' }
+--       }
+--     }
+--   }
 -- }
-
-require('lspconfig')['sumneko_lua'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' }
-      }
-    }
-  }
-}
