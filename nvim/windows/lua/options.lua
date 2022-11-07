@@ -11,6 +11,7 @@ opt.wildignorecase = true
 opt.relativenumber = true
 opt.tabstop = 2
 opt.shiftwidth = 0
+opt.scrolloff = 10
 
 -- Color Scheme
 opt.termguicolors = true
