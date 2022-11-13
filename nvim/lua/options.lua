@@ -1,6 +1,7 @@
-vim.g.mapleader = " "
 local opt = vim.opt
 local cmd = vim.cmd
+
+vim.g.mapleader = " "
 
 opt.expandtab = true
 opt.nu = true
@@ -10,17 +11,25 @@ opt.wildignorecase = true
 opt.relativenumber = true
 opt.tabstop = 2
 opt.shiftwidth = 0
+opt.scrolloff = 10
 
 -- Color Scheme
 opt.termguicolors = true
-vim.g.tokyonight_style = "night"
-vim.g.everforest_background = "hard"
 vim.g.gruvbox_contrast_dark = "hard"
 opt.background = "dark"
-cmd('colorscheme gruvbox')
+cmd([[ 
+colorscheme kanagawa 
+]])
+
+-- hi LineNr guifg=#41a6b5
+-- Transparent background
+-- cmd([[
+-- highlight Normal ctermbg=NONE guibg=NONE
+-- ]])
 
 -- Vimwiki
 cmd([[
 let g:vimwiki_list = [{'path': '~/vimwiki/', 
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+
 ]])

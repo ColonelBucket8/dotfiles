@@ -1,10 +1,11 @@
-local cmp = require("cmp")
+local present_cmp, cmp = pcall(require, "cmp")
+local present_luasnip, luasnip = pcall(require, "luasnip")
 
 cmp.setup({
 	snippet = {
 		-- REQUIRED - you must specify a snippet engine
 		expand = function(args)
-			-- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+			luasnip.lsp_expand(args.body) -- For `luasnip` users.
 			-- require('snippy').expand_snippet(args.body) -- For `snippy` users.
 			-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
 		end,
@@ -18,25 +19,30 @@ cmp.setup({
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
-		["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-		["<Tab>"] = function(fallback)
+		["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
+			elseif luasnip.expand_or_jumpable() then
+				luasnip.expand_or_jump()
 			else
 				fallback()
 			end
-		end,
-		["<S-Tab>"] = function(fallback)
+		end, { "i", "s" }),
+		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
+			elseif luasnip.jumpable(-1) then
+				luasnip.jump(-1)
 			else
 				fallback()
 			end
-		end,
+		end, { "i", "s" }),
 	}),
+
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
-		-- { name = 'luasnip' }, -- For luasnip users.
+		{ name = "luasnip" }, -- For luasnip users.
 		-- { name = 'ultisnips' }, -- For ultisnips users.
 		-- { name = 'snippy' }, -- For snippy users.
 	}, {
@@ -74,10 +80,10 @@ cmp.setup.cmdline(":", {
 -- Setup lspconfig.
 local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require("lspconfig")["tsserver"].setup({
-	capabilities = capabilities,
-})
+local servers = { "tsserver", "hls", "rust_analyzer", "sumneko_lua" }
 
-require("lspconfig")["sumneko_lua"].setup({
-	capabilities = capabilities,
-})
+for _, server in pairs(servers) do
+	require("lspconfig")[server].setup({
+		capabilities = capabilities,
+	})
+end
