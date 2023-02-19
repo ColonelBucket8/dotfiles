@@ -1,0 +1,21 @@
+call plug#begin()
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+call plug#end() 
+
+let mapleader = " "
+inoremap jj <Esc>
+set scrolloff=5
+set incsearch
+set number
+set relativenumber
+set ignorecase
+set smartcase
+set hlsearch
+set clipboard+=unnamed
+
+nnoremap <Leader>ff :Files<CR>
+nnoremap <Leader>fg :Rg<CR>
+nnoremap <Leader>fb :Buffers<CR>
