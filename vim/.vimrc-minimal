@@ -16,6 +16,6 @@ set smartcase
 set hlsearch
 set clipboard+=unnamed
 
-nnoremap <Leader>ff :Files<CR>
+nnoremap <Leader>ff :GFiles<CR>
 nnoremap <Leader>fg :Rg<CR>
 nnoremap <Leader>fb :Buffers<CR>
