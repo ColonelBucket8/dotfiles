@@ -3,6 +3,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+Plug 'tomasiser/vim-code-dark'
 call plug#end() 
 
 let mapleader = " "
@@ -15,6 +16,11 @@ set ignorecase
 set smartcase
 set hlsearch
 set clipboard+=unnamed
+
+set background="dark"
+set t_Co=256
+set t_ut=
+colorscheme codedark
 
 nnoremap <Leader>ff :GFiles<CR>
 nnoremap <Leader>fg :Rg<CR>
