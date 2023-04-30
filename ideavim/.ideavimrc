@@ -1,6 +1,8 @@
 "" Source your .vimrc
 "source ~/.vimrc
 Plug 'tpope/vim-surround'
+Plug 'preservim/nerdtree'
+Plug 'machakann/vim-highlightedyank'
 
 let mapleader = " "
 
@@ -16,18 +18,22 @@ set number
 set ignorecase
 set smartcase
 set hlsearch
+set clipboard+=unnamed
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
-imap jj <Esc>
+imap jk <Esc>
 imap <c-n> <Down>
 imap <c-p> <Up>
+vmap < <gv
+vmap > >gv
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
 "map \r <Action>(ReformatCode)
 
 map gh <Action>(ShowErrorDescription)
+map gr <Action>(FindUsages)
 
 " Errors
 map ]e <Action>(GotoNextError)
@@ -39,5 +45,6 @@ map [e <Action>(GotoPreviousError)
 "" Map \b to toggle the breakpoint on the current line
 "map \b <Action>(ToggleLineBreakpoint)
 
+map <leader>oP :NERDTreeFind<CR>
 
 " Find more examples here: https://jb.gg/share-ideavimrc
