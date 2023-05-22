@@ -45,6 +45,13 @@ map [e <Action>(GotoPreviousError)
 "" Map \b to toggle the breakpoint on the current line
 "map \b <Action>(ToggleLineBreakpoint)
 
-map <leader>oP :NERDTreeFind<CR>
 
 " Find more examples here: https://jb.gg/share-ideavimrc
+map <leader>oP :NERDTreeFind<CR>
+map <leader>sf <Action>(GotoFile)
+map <leader>bi <Action>(RecentFiles)
+map <leader>sg <Action>(FindInPath)
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+map gcc <Action>(CommentByLineComment)
+map <leader>d <Action>(ShowErrorDescription)
+map <leader>sd <Action>(ActivateProblemsViewToolWindow)
