@@ -2,6 +2,8 @@ import os
 import subprocess
 from sys import platform
 
+os_type = { "window": "win32", "mac": "darwin", "linux": "linux"}
+
 def install_tmux():
     file = open("tmux/tmux.conf","r")
     lines = file.read()
@@ -24,13 +26,12 @@ def install_tmux():
     subprocess.run(f"git clone https://github.com/tmux-plugins/tpm {os.path.expanduser('~')}/.tmux/plugins/tpm")
 
 def install_nvim():
-    if platform == "linux" or platform == "darwin":
+    if platform == os_type["linux"] or platform == os_type["mac"]:
         subprocess.run(f"git clone https://github.com/ColonelBucket8/kickstart.nvim.git {os.path.expanduser('~')}/.config/nvim")
-    elif platform == "win32":
+    elif platform == os_type["window"]:
         subprocess.run(f"git clone https://github.com/ColonelBucket8/kickstart.nvim.git {os.path.expanduser('~')}/AppData/Local/nvim")
 
-
-if platform == "linux" or platform == "darwin":
+if platform == os_type["linux"] or platform == os_type["mac"]:
     install_tmux()
 # elif os.system.platform == "darwin":
     # OS X
