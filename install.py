@@ -23,12 +23,21 @@ def install_tmux():
 
     subprocess.run(f"git clone https://github.com/tmux-plugins/tpm {os.path.expanduser('~')}/.tmux/plugins/tpm")
 
+def install_nvim():
+    if platform == "linux" or platform == "darwin":
+        subprocess.run(f"git clone https://github.com/ColonelBucket8/kickstart.nvim.git {os.path.expanduser('~')}/.config/nvim")
+    elif platform == "win32":
+        subprocess.run(f"git clone https://github.com/ColonelBucket8/kickstart.nvim.git {os.path.expanduser('~')}/AppData/Local/nvim")
+
+
 if platform == "linux" or platform == "darwin":
     install_tmux()
 # elif os.system.platform == "darwin":
     # OS X
 # elif os.system.platform == "win32":
     # Windows...
+
+install_nvim()
 
 
 
