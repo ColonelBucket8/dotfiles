@@ -13,6 +13,12 @@ home_dir = os.path.expanduser("~")
 
 
 def install_tmux():
+    tmux_path = shutil.which("tmux")
+
+    if tmux_path is None:
+        print("Tmux has not been installed yet")
+        return
+
     file = open("tmux/tmux.conf", "r")
     lines = file.read()
     file.close()
@@ -116,7 +122,7 @@ def install_zsh():
                 "git",
                 "clone",
                 "--depth=1",
-                "https://github.com/romkatv/powerlevel10k.git ",
+                "https://github.com/romkatv/powerlevel10k.git",
                 f"{zsh_custom}/themes/powerlevel10k",
             ]
         )
@@ -182,7 +188,7 @@ def install_font():
 def install_nvm():
     nvm_path = shutil.which("nvm")
 
-    if nvm_path is None:
+    if nvm_path:
         print("Nvm is already installed")
     else:
         r = requests.get(
@@ -196,13 +202,6 @@ def install_nvm():
         subprocess.run(["sh", "-c", r.content])
 
         print("Successfully install nvm")
-        subprocess.run(["source", f"{home_dir}/.zshrc"])
-        print("Installing latest node version")
-        subprocess.run(["nvm", "install", "node"])
-        print("Successfully install latest node version")
-        print("Installing stable node version")
-        subprocess.run(["nvm", "install", "--lts"])
-        print("Successfully install stable node version")
 
 
 if platform == os_type["linux"] or platform == os_type["mac"]:
