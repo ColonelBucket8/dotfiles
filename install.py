@@ -109,13 +109,32 @@ def install_font():
         print("Fail to download font")
 
 
+def install_nvm():
+    nvm_path = shutil.which("nvm")
+
+    if nvm_path is None:
+        print("Nvm is already installed")
+    else:
+        subprocess.run(
+            "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash")
+        print("Successfully install nvm")
+        subprocess.run("source ~/.zshrc")
+        print("Installing latest node version")
+        subprocess.run("nvm install node")
+        print("Successfully install latest node version")
+        print("Installing stable node version")
+        subprocess.run("nvm install --lts")
+        print("Successfully install stable node version")
+
+
 if platform == os_type["linux"] or platform == os_type["mac"]:
     install_tmux()
     install_zsh()
+    install_nvm()
 # elif os.system.platform == "darwin":
     # OS X
 # elif os.system.platform == "win32":
     # Windows...
 
-# install_nvim()
+install_nvim()
 install_font()
