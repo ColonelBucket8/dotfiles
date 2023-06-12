@@ -3,6 +3,10 @@ import subprocess
 from sys import platform
 import re
 import shutil
+import requests
+import zipfile
+import io
+from fontTools.ttLib import TTFont
 
 os_type = {"window": "win32", "mac": "darwin", "linux": "linux"}
 
@@ -75,6 +79,36 @@ def install_zsh():
         print("Successfully add zsh config")
 
 
+def install_font():
+    r = requests.get(
+        "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip")
+
+    if (r.ok):
+        z = zipfile.ZipFile(io.BytesIO(r.content))
+        os.makedirs("./font")
+        z.extractall("./font")
+        font = TTFont('./font/JetBrainsMonoNerdFont-Regular.ttf')
+        path_to_save = ""
+        if platform == os_type["window"]:
+            path_to_save = os.path.join(os.path.expanduser(
+                "~"), "AppData", "Local", "Microsoft", "Windows", "Fonts")
+        else:
+            path_to_save = os.path.join(os.path.expanduser("~"), ".fonts")
+
+        is_file_exist = os.path.isfile(os.path.join(
+            path_to_save, "JetBrainsMonoNerdFont-Regular.ttf"))
+        if (is_file_exist):
+            print("JetBrains Mono Nerd Font already installed")
+        else:
+            font.save(path_to_save)
+            print("Successfully install JetBrains Mono Nerd Font")
+
+        shutil.rmtree("./font", ignore_errors=True)
+
+    else:
+        print("Fail to download font")
+
+
 if platform == os_type["linux"] or platform == os_type["mac"]:
     install_tmux()
     install_zsh()
@@ -83,4 +117,5 @@ if platform == os_type["linux"] or platform == os_type["mac"]:
 # elif os.system.platform == "win32":
     # Windows...
 
-install_nvim()
+# install_nvim()
+install_font()
