@@ -6,7 +6,6 @@ import shutil
 import requests
 import zipfile
 import io
-from fontTools.ttLib import TTFont
 
 os_type = {"window": "win32", "mac": "darwin", "linux": "linux"}
 home_dir = os.path.expanduser("~")
