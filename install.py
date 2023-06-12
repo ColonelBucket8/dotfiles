@@ -62,9 +62,6 @@ def install_zsh():
             "git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search")
         subprocess.run(
             "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting")
-        print("Add plugins to ~/.zshrc")
-        print(
-            "plugins=( [plugins...] zsh-autosuggestions history-substring-search zsh-syntax-highlighting)")
 
         # Install powerlevel10k
         subprocess.run(
@@ -74,7 +71,9 @@ def install_zsh():
         lines = zsh_file.read()
         result = re.sub(r"ZSH_THEME=(.*)",
                         'ZSH_THEME="powerlevel10k/powerlevel10k"', lines)
-        zsh_file.write(result)
+        result2 = re.sub(
+            r"plugins=(.*)", "plugins=(git zsh-autosuggestions history-substring-search zsh-syntax-highlighting)", result)
+        zsh_file.write(result2)
         zsh_file.close()
         print("Successfully add zsh config")
 
