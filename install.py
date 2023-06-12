@@ -70,28 +70,59 @@ def install_zsh():
     if zsh_path is None:
         print("zsh has not been installed yet")
     else:
-        zsh_custom = os.environ["ZSH_CUSTOM"]
-        subprocess.run(
-            'sh - c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
+        r = requests.get(
+            "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
         )
+        if not r.ok:
+            print("Cannot get oh my zsh")
+            return
+
+        subprocess.run(["sh", "-c", r.content])
+
+        zsh_custom = os.environ["ZSH_CUSTOM"]
 
         # Make zsh like fish
         subprocess.run(
-            "git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions"
+            [
+                "git",
+                "clone",
+                "https://github.com/zsh-users/zsh-autosuggestions.git",
+                f"{zsh_custom}/plugins/zsh-autosuggestions",
+            ]
         )
+
         subprocess.run(
-            "git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search"
+            [
+                "git",
+                "clone",
+                "https://github.com/zsh-users/zsh-history-substring-search",
+                f"{zsh_custom}/plugins/zsh-history-substring-search",
+            ]
         )
+
         subprocess.run(
-            "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+            [
+                "git",
+                "clone",
+                "https://github.com/zsh-users/zsh-syntax-highlighting.git",
+                f"{zsh_custom}/plugins/zsh-syntax-highlighting",
+            ]
         )
 
         # Install powerlevel10k
+
         subprocess.run(
-            "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+            [
+                "git",
+                "clone",
+                "--depth=1",
+                "https://github.com/romkatv/powerlevel10k.git ",
+                f"{zsh_custom}/themes/powerlevel10k",
+            ]
         )
+
         zsh_file_path = os.path.join(home_dir, ".zshrc")
-        zsh_file = open(zsh_file_path, "w")
+        zsh_file = open(zsh_file_path, "r")
         lines = zsh_file.read()
         result = re.sub(
             r"ZSH_THEME=(.*)", 'ZSH_THEME="powerlevel10k/powerlevel10k"', lines
@@ -101,8 +132,12 @@ def install_zsh():
             "plugins=(git zsh-autosuggestions history-substring-search zsh-syntax-highlighting)",
             result,
         )
-        zsh_file.write(result2)
         zsh_file.close()
+
+        zsh_file_write = open(zsh_file_path, "w")
+        zsh_file_write.write(result2)
+        zsh_file_write.close()
+
         print("Successfully add zsh config")
 
 
@@ -150,16 +185,23 @@ def install_nvm():
     if nvm_path is None:
         print("Nvm is already installed")
     else:
-        subprocess.run(
-            "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash"
+        r = requests.get(
+            "https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh"
         )
+
+        if not r.ok:
+            print("Cannot get nvm")
+            return
+
+        subprocess.run(["sh", "-c", r.content])
+
         print("Successfully install nvm")
-        subprocess.run("source ~/.zshrc")
+        subprocess.run(["source", f"{home_dir}/.zshrc"])
         print("Installing latest node version")
-        subprocess.run("nvm install node")
+        subprocess.run(["nvm", "install", "node"])
         print("Successfully install latest node version")
         print("Installing stable node version")
-        subprocess.run("nvm install --lts")
+        subprocess.run(["nvm", "install", "--lts"])
         print("Successfully install stable node version")
 
 
