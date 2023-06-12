@@ -156,7 +156,6 @@ def install_font():
         z = zipfile.ZipFile(io.BytesIO(r.content))
         os.makedirs("./font")
         z.extractall("./font")
-        font = TTFont("./font/JetBrainsMonoNerdFont-Regular.ttf")
         path_to_save = ""
         if platform == os_type["window"]:
             path_to_save = os.path.join(
@@ -170,14 +169,11 @@ def install_font():
         else:
             path_to_save = os.path.join(home_dir, ".fonts")
 
-        is_file_exist = os.path.isfile(
-            os.path.join(path_to_save, "JetBrainsMonoNerdFont-Regular.ttf")
-        )
-        if is_file_exist:
-            print("JetBrains Mono Nerd Font already installed")
-        else:
-            font.save(path_to_save)
-            print("Successfully install JetBrains Mono Nerd Font")
+        src_files = os.listdir("./font")
+        for file_name in src_files:
+            full_file_name = os.path.join("./font", file_name)
+            if os.path.isfile(full_file_name):
+                shutil.copy(full_file_name, path_to_save)
 
         shutil.rmtree("./font", ignore_errors=True)
 
