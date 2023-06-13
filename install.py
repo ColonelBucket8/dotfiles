@@ -84,7 +84,7 @@ def install_zsh():
 
         subprocess.run(["sh", "-c", r.content])
 
-        zsh_custom = os.environ["ZSH_CUSTOM"]
+        zsh_custom = os.getenv("ZSH_CUSTOM") or f"{home_dir}/.oh-my-zsh/custom"
 
         # Make zsh like fish
         subprocess.run(
@@ -168,6 +168,9 @@ def install_font():
         else:
             path_to_save = os.path.join(home_dir, ".fonts")
 
+        if not os.path.isdir(path_to_save):
+            os.makedirs(path_to_save)
+
         src_files = os.listdir("./font")
         for file_name in src_files:
             full_file_name = os.path.join("./font", file_name)
@@ -199,14 +202,14 @@ def install_nvm():
         print("Successfully install nvm")
 
 
+install_nvim()
+install_font()
+
 if platform == os_type["linux"] or platform == os_type["mac"]:
     install_tmux()
-    install_zsh()
     install_nvm()
+    install_zsh()
 # elif os.system.platform == "darwin":
 # OS X
 # elif os.system.platform == "win32":
 # Windows...
-
-install_nvim()
-install_font()
