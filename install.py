@@ -11,7 +11,7 @@ os_type = {"window": "win32", "mac": "darwin", "linux": "linux"}
 home_dir = os.path.expanduser("~")
 
 
-def install_tmux():
+def add_tmux_config():
     tmux_path = shutil.which("tmux")
 
     if tmux_path is None:
@@ -47,7 +47,7 @@ def install_tmux():
     print("Successfully add tmux config")
 
 
-def install_nvim():
+def add_nvim_config():
     if platform == os_type["linux"] or platform == os_type["mac"]:
         subprocess.run(
             [
@@ -69,7 +69,7 @@ def install_nvim():
     print("Successfully add neovim config")
 
 
-def install_zsh():
+def add_zsh_config():
     zsh_path = shutil.which("zsh")
 
     if zsh_path is None:
@@ -202,13 +202,31 @@ def install_nvm():
         print("Successfully install nvm")
 
 
-install_nvim()
+def add_kitty_config():
+    kitty_dir = f"{home_dir}/.config/kitty"
+
+    if not os.path.isdir(kitty_dir):
+        os.makedirs(kitty_dir)
+
+    kitty_file = open("./kitty/kitty.conf", "r")
+    kitty_config = kitty_file.read()
+    kitty_file.close()
+
+    kitty_path = open(f"{ kitty_dir }/kitty.conf", "w")
+    kitty_path.write(kitty_config)
+    kitty_path.close()
+
+    print("Successfully add kitty config")
+
+
+add_nvim_config()
 install_font()
 
 if platform == os_type["linux"] or platform == os_type["mac"]:
-    install_tmux()
+    add_tmux_config()
     install_nvm()
-    install_zsh()
+    add_zsh_config()
+    add_kitty_config()
 # elif os.system.platform == "darwin":
 # OS X
 # elif os.system.platform == "win32":
