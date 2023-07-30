@@ -96,9 +96,12 @@
 
 (remove-hook 'doom-first-buffer-hook #'smartparens-global-mode)
 
+(setq-hook! 'typescript-mode-hook +format-with-lsp nil)
+(setq-hook! 'web-mode-hook +format-with-lsp nil)
+
 ;; Configure prettier (optional)
-(add-hook 'typescript-mode-hook #'prettier-mode)
-(add-hook 'web-mode-hook #'prettier-mode)
+;; (add-hook 'typescript-mode-hook #'prettier-mode)
+;; (add-hook 'web-mode-hook #'prettier-mode)
 
 (setq +mu4e-gmail-accounts '(("freedomterran89@gmail.com" . "/freedom")))
 (setq eww-search-prefix "https://www.google.com/search?q=")
