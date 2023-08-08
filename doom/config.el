@@ -74,14 +74,9 @@
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 
 ;; (setq org-agenda-files (directory-files-recursively "~/org" ".org$"))
-(setq org-agenda-files   (list "~/org/")
-      org-refile-targets '((org-agenda-files :maxlevel . 5))
-      org-refile-use-outline-path 'file
-      ;; org-log-into-drawer t
-      ;; org-log-done 'time
-      ;; org-log-redeadline 'time
-      ;; org-log-reschedule 'time
-)
+(with-eval-after-load 'org
+  (defun org-agenda-files (&rest _)
+    (directory-files-recursively "~/org" org-agenda-file-regexp)))
 
 (setq org-hide-leading-stars t)
 
