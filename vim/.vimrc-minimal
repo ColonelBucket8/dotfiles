@@ -1,27 +1,33 @@
+" if (has('termguicolors'))
+"  set termguicolors
+" endif
+
 call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'tomasiser/vim-code-dark'
+Plug 'altercation/vim-colors-solarized'
 call plug#end() 
 
 let mapleader = " "
-inoremap jj <Esc>
+" inoremap jk <Esc>
+vmap < <gv
+vmap > >gv
 set scrolloff=5
 set incsearch
-set number
-set relativenumber
+" set number
+" set relativenumber
 set ignorecase
 set smartcase
-set hlsearch
 set clipboard+=unnamed
+set nohlsearch
 
+syntax enable
 set background="dark"
-set t_Co=256
-set t_ut=
-colorscheme codedark
+colorscheme solarized
 
-nnoremap <Leader>ff :GFiles<CR>
-nnoremap <Leader>fg :Rg<CR>
-nnoremap <Leader>fb :Buffers<CR>
+nnoremap <Leader>pf :GFiles<CR>
+nnoremap <Leader>/ :Rg<CR>
+nnoremap <Leader>bi :Buffers<CR>
+nnoremap <Leader>. :Ex<CR>
