@@ -1,0 +1,25 @@
+" if (has('termguicolors'))
+"  set termguicolors
+" endif
+
+let mapleader = " "
+" inoremap jk <Esc>
+vmap < <gv
+vmap > >gv
+set scrolloff=5
+set incsearch
+" set number
+" set relativenumber
+set ignorecase
+set smartcase
+set clipboard+=unnamed
+set nohlsearch
+
+syntax enable
+set background="dark"
+
+nnoremap K :vsc Edit.QuickInfo<Enter>
+nnoremap <Leader>/ :vsc Edit.FindinFiles<Enter>
+nnoremap <Leader>pf :vsc Edit.GoToFile<Enter>
+nnoremap <Leader>ca :vsc View.QuickActions<Enter>
+nnoremap <Leader>rn :vsc Refactor.Rename<Enter>
