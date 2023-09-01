@@ -17,7 +17,24 @@ M.general = {
 
 M.custom = {
 	n = {
-		["<leader>pf"] = { ":Telescope find_files <CR>", "Telescope find files" },
+		["<leader>pf"] = {
+			function()
+				require("telescope.builtin").find_files()
+			end,
+			"Telescope find files",
+		},
+		["<leader>/"] = {
+			function()
+				require("telescope.builtin").live_grep()
+			end,
+			"Search keywords in project",
+		},
+		["<leader>bi"] = {
+			function()
+				require("telescope.builtin").buffers()
+			end,
+			"Search buffers",
+		},
 		["gr"] = {
 			function()
 				require("telescope.builtin").lsp_references()
@@ -32,8 +49,6 @@ M.custom = {
 		},
 		["<leader>op"] = { ":NvimTreeToggle <CR>", "Toggle nvim tree" },
 		["<leader>oP"] = { ":NvimTreeFocus <CR>", "Focus nvim tree" },
-		["<leader>/"] = { ":Telescope live_grep<CR>", "Search keywords in project" },
-		["<leader>bi"] = { ":Telescope buffers<CR>", "Search buffers" },
 		["<leader>gg"] = { ":LazyGit<CR>", "Lazygit" },
 	},
 	v = {
