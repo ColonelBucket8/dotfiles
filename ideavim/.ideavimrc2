@@ -11,11 +11,11 @@ source ~/.intellimacs/hybrid.vim
 source ~/.intellimacs/which-key.vim
 
 " (Optional) My own vim commands
-nnoremap Y y$
+" nnoremap Y y$
 
 " (Optional) Comma for major mode
-nmap , <leader>m
-vmap , <leader>m
+" nmap , <leader>m
+" vmap , <leader>m
 
 " (Optional) Add/edit actions
 nnoremap <leader>gl    :action Vcs.Show.Log<CR>
