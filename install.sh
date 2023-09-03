@@ -3,7 +3,7 @@
 os_type=("window" "mac" "linux")
 home_dir="$HOME"
 
-function add_tmux_config_2() {
+function add_tmux_config() {
   tmux_path=$(which tmux)
 
   if [ -z "$tmux_path" ]; then
