@@ -13,18 +13,19 @@ set scrolloff=5
 
 " Do incremental searching.
 set incsearch
-set relativenumber
-set number
+" set relativenumber
+" set number
 set ignorecase
 set smartcase
 set hlsearch
 set clipboard+=unnamed
+set nohlsearch
 
 " Don't use Ex mode, use Q for formatting.
-map Q gq
-imap jk <Esc>
-imap <c-n> <Down>
-imap <c-p> <Up>
+" map Q gq
+" imap jk <Esc>
+" imap <c-n> <Down>
+" imap <c-p> <Up>
 vmap < <gv
 vmap > >gv
 
@@ -32,12 +33,11 @@ vmap > >gv
 "" Map \r to the Reformat Code action
 "map \r <Action>(ReformatCode)
 
-map gh <Action>(ShowErrorDescription)
 map gr <Action>(FindUsages)
 
 " Errors
-map ]e <Action>(GotoNextError)
-map [e <Action>(GotoPreviousError)
+map ]d <Action>(GotoNextError)
+map [d <Action>(GotoPreviousError)
 
 "" Map <leader>d to start debug
 "map <leader>d <Action>(Debug)
@@ -48,10 +48,10 @@ map [e <Action>(GotoPreviousError)
 
 " Find more examples here: https://jb.gg/share-ideavimrc
 map <leader>oP :NERDTreeFind<CR>
-map <leader>sf <Action>(GotoFile)
+map <leader>pf <Action>(GotoFile)
+map <leader>/ <Action>(FindInPath)
 map <leader>bi <Action>(RecentFiles)
-map <leader>sg <Action>(FindInPath)
 map <leader>rr <Action>(Refactorings.QuickListPopupAction)
 map gcc <Action>(CommentByLineComment)
-map <leader>d <Action>(ShowErrorDescription)
+map <leader>e <Action>(ShowErrorDescription)
 map <leader>sd <Action>(ActivateProblemsViewToolWindow)
