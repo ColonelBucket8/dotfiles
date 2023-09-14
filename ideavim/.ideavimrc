@@ -20,6 +20,9 @@ set smartcase
 set hlsearch
 set clipboard+=unnamed
 set nohlsearch
+set visualbell
+set noerrorbells
+set guicursor=i:block
 
 " Don't use Ex mode, use Q for formatting.
 " map Q gq
