@@ -9,3 +9,4 @@
 vim.o.number = false
 vim.o.hlsearch = false
 vim.o.scrolloff = 5
+vim.o.guicursor = ""
