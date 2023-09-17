@@ -50,6 +50,12 @@ M.custom = {
 		["<leader>op"] = { ":NvimTreeToggle <CR>", "Toggle nvim tree" },
 		["<leader>oP"] = { ":NvimTreeFocus <CR>", "Focus nvim tree" },
 		["<leader>gg"] = { ":LazyGit<CR>", "Lazygit" },
+		["<leader>e"] = {
+			function()
+				vim.diagnostic.open_float({ border = "rounded" })
+			end,
+			"Floating diagnostic",
+		},
 	},
 	v = {
 		["<"] = { "<gv" },
