@@ -6,7 +6,7 @@
 --   command = "tabdo wincmd =",
 -- })
 
-vim.o.number = false
+vim.o.number = true
 vim.o.hlsearch = false
 vim.o.scrolloff = 5
 vim.o.guicursor = ""

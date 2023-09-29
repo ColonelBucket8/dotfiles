@@ -41,6 +41,12 @@ M.custom = {
 			end,
 			"[G]oto [R]eferences",
 		},
+		["<C-LeftMouse>"] = {
+			function()
+				vim.lsp.buf.definition()
+			end,
+			"[G]oto [R]eferences",
+		},
 		["<leader>rn"] = {
 			function()
 				require("nvchad.renamer").open()
