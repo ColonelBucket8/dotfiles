@@ -45,7 +45,7 @@ M.custom = {
 			function()
 				vim.lsp.buf.definition()
 			end,
-			"[G]oto [R]eferences",
+			"[G]oto [D]efinition",
 		},
 		["<leader>rn"] = {
 			function()
