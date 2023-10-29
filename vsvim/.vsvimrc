@@ -24,3 +24,6 @@ nnoremap <Leader>pf :vsc Edit.GoToFile<Enter>
 nnoremap <Leader>ca :vsc View.QuickActions<Enter>
 nnoremap <Leader>rn :vsc Refactor.Rename<Enter>
 nnoremap gr :vsc Edit.FindAllReferences<Enter>
+" jump between compilation errors
+nnoremap ]d :vsc View.NextError<cr>
+nnoremap [d :vsc View.PreviousError<cr>
