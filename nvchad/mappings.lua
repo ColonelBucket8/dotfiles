@@ -17,6 +17,14 @@ M.general = {
 
 M.custom = {
 	n = {
+		["[q"] = {
+			":cprev <CR>",
+			"Jump to previuos quickfix",
+		},
+		["]q"] = {
+			":cnext <CR>",
+			"Jump to next quickfix",
+		},
 		["<leader>pf"] = {
 			function()
 				require("telescope.builtin").find_files()
