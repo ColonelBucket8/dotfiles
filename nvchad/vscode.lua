@@ -33,6 +33,12 @@ end)
 vim.keymap.set("n", "<leader>rn", function()
 	require("vscode-neovim").call("editor.action.rename")
 end)
+vim.keymap.set("n", "]d", function()
+	require("vscode-neovim").call("editor.action.marker.next")
+end)
+vim.keymap.set("n", "[d", function()
+	require("vscode-neovim").call("editor.action.marker.prev")
+end)
 
 require("lazy").setup({
 	{
