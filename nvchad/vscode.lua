@@ -39,6 +39,9 @@ end)
 vim.keymap.set("n", "[d", function()
 	require("vscode-neovim").call("editor.action.marker.prev")
 end)
+vim.keymap.set("n", "gr", function()
+	require("vscode-neovim").call("references-view.findReferences")
+end)
 
 require("lazy").setup({
 	{
